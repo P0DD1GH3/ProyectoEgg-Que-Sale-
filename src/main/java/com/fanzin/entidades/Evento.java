@@ -1,7 +1,5 @@
-
 package com.fanzin.entidades;
 
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,29 +12,29 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Data
 public class Evento {
-    
+
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    
-   @ManyToOne
+
+    @ManyToOne
     private Usuario usuario;
-    
+
     @NonNull
     private String contenido;
-    
+
     @NonNull
     private String direccion;
-    
+
     @NonNull
     private String valor;
-    
+
     @NonNull
     @OneToOne
     private Imagen imagen;
-    
+
     @NonNull
     private String fecha;
-    
+
 }
