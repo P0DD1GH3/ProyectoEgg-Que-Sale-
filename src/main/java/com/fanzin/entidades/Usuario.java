@@ -1,26 +1,34 @@
 package com.fanzin.entidades;
 
-import javax.persistence.Basic;
+import com.fanzin.enumeraciones.Rol;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 import lombok.Data;
+import lombok.NonNull;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Data
-public class Imagen {
+public class Usuario {
 
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
+    @NonNull
     private String nombre;
 
-    @Lob
-    @Basic(fetch = FetchType.EAGER)
-    private byte[] contenido;
+    @NonNull
+    private String mail;
+
+    @NonNull
+    private String contraseña;
+
+    @OneToOne
+    private Imagen imagen;
+
+    private Rol rol;
 }
