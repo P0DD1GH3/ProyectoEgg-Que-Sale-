@@ -9,6 +9,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class EventoServicio {
@@ -23,7 +24,7 @@ public class EventoServicio {
     private ImagenServicio imagenServicio;
 
     @Transactional(rollbackFor = Exception.class)
-    public void guardar(String idOrganizador, String contenido, String direccion, String valor, String idImagen, Date fecha) throws Exception {
+    public void guardar(String idOrganizador, String contenido, String direccion, String valor,MultipartFile archivo, Date fecha) throws Exception {
 
         Evento evento = new Evento();
         Usuario usuario = usuarioServicio.buscarPorId(idOrganizador);
@@ -31,7 +32,7 @@ public class EventoServicio {
         evento.setContenido(contenido);
         evento.setDireccion(direccion);
         evento.setValor(valor);
-        Imagen imagen = imagenServicio.buscarPorId(idImagen);
+        Imagen imagen = imagenServicio.guardar(archivo);
         evento.setImagen(imagen);
         evento.setFecha(fecha);
 
@@ -57,12 +58,17 @@ public class EventoServicio {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public void modificarEvento(String id, String contenido, String direccion, String valor, Imagen imagen, Date fecha) throws Exception {
+    public void modificarEvento(String id, String contenido, String direccion, String valor, MultipartFile archivo, Date fecha) throws Exception {
 
             Evento evento = buscarPorId(id);
             evento.setContenido(contenido);
             evento.setDireccion(direccion);
             evento.setValor(valor);
+            String idImagen = null;
+            if (evento.getImagen()!= null) {
+                idImagen= evento.getImagen().getId();
+             }
+            Imagen imagen = imagenServicio.modificar(idImagen, archivo);
             evento.setImagen(imagen);
             evento.setFecha(fecha);
 
