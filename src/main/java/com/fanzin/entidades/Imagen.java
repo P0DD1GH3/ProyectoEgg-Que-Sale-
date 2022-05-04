@@ -15,7 +15,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Imagen {
+public class Imagen { 
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -23,9 +23,11 @@ public class Imagen {
     private String id;
 
     private String nombre;
+    
+    private String mime;
 
     @Lob
-    @Basic(fetch = FetchType.EAGER)
+    @Basic(fetch = FetchType.LAZY)
     private byte[] contenido;
 
 }
