@@ -23,7 +23,7 @@ public class EventoServicio {
     private ImagenServicio imagenServicio;
 
     @Transactional(rollbackFor = Exception.class)
-    public void guardar(String idOrganizador, String contenido, String direccion, String valor, String idImagen, Date fecha) {
+    public void guardar(String idOrganizador, String contenido, String direccion, String valor, String idImagen, Date fecha) throws Exception {
 
         Evento evento = new Evento();
         Usuario usuario = usuarioServicio.buscarPorId(idOrganizador);
@@ -59,9 +59,7 @@ public class EventoServicio {
     @Transactional(rollbackFor = Exception.class)
     public void modificarEvento(String id, String contenido, String direccion, String valor, Imagen imagen, Date fecha) throws Exception {
 
-        Optional<Evento> response = eventoRepositorio.findById(id);
-        if (response.isPresent()) {
-            Evento evento = response.get();
+            Evento evento = buscarPorId(id);
             evento.setContenido(contenido);
             evento.setDireccion(direccion);
             evento.setValor(valor);
@@ -70,9 +68,6 @@ public class EventoServicio {
 
             eventoRepositorio.save(evento);
 
-        } else {
-            throw new Exception("No se encontro el evento que desea modificar");
-        }
     }
 
 }
