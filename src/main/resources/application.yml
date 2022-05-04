@@ -13,8 +13,8 @@ spring:
     password: 
   datasource: 
     url: jdbc:mysql://localhost:3306/fanzin?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
-    username: user
-    password: pass
+    username: root
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver 
   jpa:
     show-sql: true
