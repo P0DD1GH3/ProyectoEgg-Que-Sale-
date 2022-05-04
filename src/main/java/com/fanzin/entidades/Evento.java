@@ -8,12 +8,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Evento {
 
     @Id
@@ -22,7 +26,7 @@ public class Evento {
     private String id;
 
     @ManyToOne
-    private Usuario usuario;
+    private Usuario organizador;
 
     @NonNull
     private String contenido;
