@@ -6,11 +6,15 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Imagen {
 
     @Id
@@ -23,4 +27,5 @@ public class Imagen {
     @Lob
     @Basic(fetch = FetchType.EAGER)
     private byte[] contenido;
+
 }
