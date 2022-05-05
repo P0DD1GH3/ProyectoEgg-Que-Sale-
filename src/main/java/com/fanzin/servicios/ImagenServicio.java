@@ -12,54 +12,52 @@ public class ImagenServicio {
 
     @Autowired
     private ImagenRepositorio imagenRepositorio;
-    
-    public Imagen guardar(MultipartFile archivo) throws Exception{
-        if (archivo != null){
-            try{
+
+    public Imagen guardar(MultipartFile archivo) throws Exception {
+        if (archivo != null) {
+            try {
                 Imagen imagen = new Imagen();
                 imagen.setMime(archivo.getContentType());
                 imagen.setNombre(archivo.getName());
                 imagen.setContenido(archivo.getBytes());
-      
+
                 return imagenRepositorio.save(imagen);
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
-            }   
+            }
         }
         return null;
     }
-    
-    public Imagen modificar(String id, MultipartFile archivo)throws Exception{
-        if (archivo != null){
-            try{
+
+    public Imagen modificar(String id, MultipartFile archivo) throws Exception {
+        if (archivo != null) {
+            try {
                 Imagen imagen = new Imagen();
-                
-                if(id != null){
+
+                if (id != null) {
                     imagen = buscarPorId(id);
                 }
 
                 imagen.setMime(archivo.getContentType());
                 imagen.setNombre(archivo.getName());
                 imagen.setContenido(archivo.getBytes());
-      
+
                 return imagenRepositorio.save(imagen);
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
-            }   
+            }
         }
         return null;
     }
-    
-    
-    public Imagen buscarPorId(String id) throws Exception{
+
+    public Imagen buscarPorId(String id) throws Exception {
         Optional<Imagen> response = imagenRepositorio.findById(id);
-        
-        if(response.isPresent()){
+
+        if (response.isPresent()) {
             return response.get();
-        }else{
-            throw new Exception("No se encontro imagen indicada");
+        } else {
+            throw new Exception("No se encontro la imagen indicada");
         }
     }
-    
-    
+
 }

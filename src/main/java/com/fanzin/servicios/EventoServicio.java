@@ -24,7 +24,7 @@ public class EventoServicio {
     private ImagenServicio imagenServicio;
 
     @Transactional(rollbackFor = Exception.class)
-    public void guardar(String idOrganizador, String contenido, String direccion, String valor,MultipartFile archivo, Date fecha) throws Exception {
+    public void crear(String idOrganizador, String contenido, String direccion, String valor, MultipartFile archivo, Date fecha) throws Exception {
 
         Evento evento = new Evento();
         Usuario usuario = usuarioServicio.buscarPorId(idOrganizador);
@@ -60,19 +60,19 @@ public class EventoServicio {
     @Transactional(rollbackFor = Exception.class)
     public void modificarEvento(String id, String contenido, String direccion, String valor, MultipartFile archivo, Date fecha) throws Exception {
 
-            Evento evento = buscarPorId(id);
-            evento.setContenido(contenido);
-            evento.setDireccion(direccion);
-            evento.setValor(valor);
-            String idImagen = null;
-            if (evento.getImagen()!= null) {
-                idImagen= evento.getImagen().getId();
-             }
-            Imagen imagen = imagenServicio.modificar(idImagen, archivo);
-            evento.setImagen(imagen);
-            evento.setFecha(fecha);
+        Evento evento = buscarPorId(id);
+        evento.setContenido(contenido);
+        evento.setDireccion(direccion);
+        evento.setValor(valor);
+        String idImagen = null;
+        if (evento.getImagen() != null) {
+            idImagen = evento.getImagen().getId();
+        }
+        Imagen imagen = imagenServicio.modificar(idImagen, archivo);
+        evento.setImagen(imagen);
+        evento.setFecha(fecha);
 
-            eventoRepositorio.save(evento);
+        eventoRepositorio.save(evento);
 
     }
 
