@@ -1,0 +1,48 @@
+package com.fanzin.entidades;
+
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Evento {
+
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
+
+    @ManyToOne
+    private Usuario organizador;
+
+    @NonNull
+    private String contenido;
+
+    @NonNull
+    private String direccion;
+
+    @NonNull
+    private String valor;
+
+    @NonNull
+    @OneToOne
+    private Imagen imagen;
+
+    @NonNull
+    @Temporal(TemporalType.DATE)
+    private Date fecha;
+
+}
