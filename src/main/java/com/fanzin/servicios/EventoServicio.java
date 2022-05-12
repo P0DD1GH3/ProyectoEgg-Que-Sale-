@@ -5,6 +5,7 @@ import com.fanzin.entidades.Imagen;
 import com.fanzin.entidades.Usuario;
 import com.fanzin.repositorios.EventoRepositorio;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -73,6 +74,12 @@ public class EventoServicio {
         evento.setFecha(fecha);
 
         eventoRepositorio.save(evento);
+
+    }
+
+    @Transactional(readOnly = true)
+    public List<Evento> listar() {
+        return eventoRepositorio.findAll();
 
     }
 
