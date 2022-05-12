@@ -19,30 +19,24 @@ public class EventoControlador {
 
     @Autowired
     private EventoServicio eventoServicio;
-    
-    //eventos sin S todas las variables
-
 
     @GetMapping("/listar")
     public String listarEvento(ModelMap modelo) {
         List<Evento> eventos = eventoServicio.listar();
 
-
         modelo.put("eventos", eventos);
-        
+
         return ".html";
     }
-    
-    
-    
+
     @PostMapping("/")
-    public String registrarEvento(ModelMap modelo,@RequestParam String idOrganizador,@RequestParam String contenido,@RequestParam String direccion,@RequestParam String valor, MultipartFile archivo,@RequestParam Date fecha){
-        
-         try {
+    public String registrarEvento(ModelMap modelo, @RequestParam String idOrganizador, @RequestParam String contenido, @RequestParam String direccion, @RequestParam String valor, MultipartFile archivo, @RequestParam Date fecha) {
+
+        try {
             eventoServicio.crear(idOrganizador, contenido, direccion, valor, archivo, fecha);
             modelo.put("exito", "Se guardó correctamente");
         } catch (Exception e) {
-            modelo.put("error",e.getMessage());
+            modelo.put("error", e.getMessage());
             modelo.put("idOrganizador", idOrganizador);
             modelo.put("contenido", contenido);
             modelo.put("direccion", direccion);
@@ -54,13 +48,7 @@ public class EventoControlador {
             return "html";
         }
         return "html";
-        
-        
-        
+
     }
-    
-    
-    
-    
-    
+
 }
