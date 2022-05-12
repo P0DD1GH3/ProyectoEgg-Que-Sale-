@@ -94,5 +94,6 @@ public class UsuarioServicio {
             throw new Exception("Contraseña vacío");
         }
     }
+   
 
 }
