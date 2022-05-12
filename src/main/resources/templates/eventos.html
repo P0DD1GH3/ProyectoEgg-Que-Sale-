@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos</title>
+  <link rel="stylesheet" href="../static/css/eventos.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+
+</head>
+
+<body>
+  <!--Header con un navbar-->
+  <section class="light">
+    <nav class="navbar navbar-expand-sm navbar-danger bg-danger">
+      <div class="container-fluid">
+        <!-- logo -->
+        <a class="navbar-brand" href="#">
+          <img src="../static/images/logo.jpg" alt="Logo" style="width:40px;" class="rounded-pill border-5">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Cartelera</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Registrate</a>
+            </li>
+          </ul>
+          <div class="d-flex justify-content-end">
+            <form class="d-flex ">
+              <input class="form-control me-2" type="text" placeholder="Artista....">
+              <button class="btn btn-danger" type="button">Buscar</button>
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <!-- partial:index.partial.html -->
+  <div class="cards">
+
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://comunidad.fan/web/uploads/news/3717/0-desktop.jpg?1629468197" alt="" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          La Konga
+          <small>Estadio Luján</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          El trío cuartetero del momento que te hace vibrar con sus exitos.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">+ info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image"
+          src="https://www.lavoz.com.ar/resizer/h8JRZTmjGlVtHMIetUreC8h5e-I=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/HSHL53STJ5D7DDQ56FVLUKBPFQ.jpg"
+          alt="" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          La Barra
+          <small>Orfeo Superdromo</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Veni a disfrutar una noche de puro baile y emoción de la mano de los grandes del cuarteto.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">+ info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image"
+          src="https://viapais.com.ar/resizer/Up5snBm25JK1IE1FVuWrQuEyBU8=/982x551/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/HFTGCNLEGFRDSMZQMZRWGMTCMI.jpg"
+          alt="" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Banda XXI
+          <small>Estadio Luna Park</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Te invitamos a vivir una noche inolvidable de la mano del ritmo más vibrante de la musica.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">+ info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image"
+          src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/01/23095952/Soledad-Pastorutti-Mar-del-Plata-Verano-2019-1920-3.jpg"
+          alt="" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Soledad Pastorutti
+          <small>Teatro Gran Rex</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're
+          not available etc.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">+ info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image"
+          src="https://www.eldiario.com.ar/wp-content/uploads/2019/01/Luciano-Pereyra-en-la-Fiesta-de-la-Playa-12.jpg"
+          alt="" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Luciano Pereyra
+          <small>Auditoria Rosello</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Presentando su ultimo corte "Nostalgias"
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">+ info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image"
+          src="https://www.diariodecuyo.com.ar/__export/1620513836424/sites/diariodecuyo/img/2021/05/08/abel.jpg"
+          alt="" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Abel Pintos
+          <small>Arena Maipu</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          La voz inigualable de este gran artista
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">+ info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image"
+          src="https://wikirock.net/wp-content/uploads/2021/05/red-hot-chili-peppers-nuevo-disco-1000x534.jpg" alt="" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Red Hot Chili Peppers
+          <small>Estadio River Plate</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're
+          not available etc.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">+ info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://estacionk2.com/wp-content/uploads/2019/10/la-renga-1.jpg" alt="" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          La Renga
+          <small>Estadio Juan Jose Minella</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Presentacion de su último disco "Alejado de la red"
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">+ info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://www.elindependiente.com/wp-content/uploads/2017/09/Mick-jagger.jpg"
+          alt="" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          THE ROLLING STONES
+          <small>Pulperia de amigos</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Presentando su ultimo disco "Blue & Lonesome"
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">+ info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- partial -->
+
+
+  <!-- Footer -->
+  <footer class="bg-danger text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-1 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-1">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i
+            class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i
+            class="fab fa-twitter"></i></a>
+
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i
+            class="fab fa-google"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i
+            class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i
+            class="fab fa-linkedin-in"></i></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i
+            class="fab fa-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="#">www.quesaleweb.com.ar</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+  <script src="../static/script/eventos.js"></script>
+
+</body>
+
+</html>
