@@ -29,7 +29,7 @@ public class Usuario {
     private String mail;
 
     @NonNull
-    private String contraseña;
+    private String contrasenia;
 
     @OneToOne
     private Imagen imagen;
