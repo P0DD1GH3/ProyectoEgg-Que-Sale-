@@ -18,18 +18,6 @@ public class UsuarioControlador {
     @Autowired
     private UsuarioServicio usuarioServicio;
 
-  
-    @GetMapping("/listar")
-    public String listarUsuario(ModelMap modelo) {
-        List<Usuario> usuarios = usuarioServicio.listar();
-
-
-        modelo.put("usuarios", usuarios);
-        
-        return ".html";
-    }
-    
-
     @GetMapping("/form")
     public String form() {
         return "artist-form.html";
@@ -51,5 +39,13 @@ public class UsuarioControlador {
         return "artist-form.html";
     }
 
+    @GetMapping("/listar")
+    public String listarUsuario(ModelMap modelo) {
+        List<Usuario> usuarios = usuarioServicio.listar();
+
+        modelo.put("usuarios", usuarios);
+
+        return ".html";
+    }
 
 }

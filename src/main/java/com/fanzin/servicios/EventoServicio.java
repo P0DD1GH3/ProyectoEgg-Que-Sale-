@@ -76,7 +76,7 @@ public class EventoServicio {
         eventoRepositorio.save(evento);
 
     }
-    
+
     @Transactional(readOnly = true)
     public List<Evento> listar() {
         return eventoRepositorio.findAll();
