@@ -20,16 +20,6 @@ public class EventoControlador {
     @Autowired
     private EventoServicio eventoServicio;
 
-    //eventos sin S todas las variables
-    @GetMapping("/")
-    public String Evento(ModelMap modelo) {
-        List<Evento> eventos = eventoServicio.listar();
-
-        modelo.put("eventos", eventos);
-
-        return ".html";
-    }
-
     @GetMapping("/listar")
     public String listarEvento(ModelMap modelo) {
         List<Evento> eventos = eventoServicio.listar();
