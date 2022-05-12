@@ -1,6 +1,8 @@
 package com.fanzin.controladores;
 
+import com.fanzin.entidades.Usuario;
 import com.fanzin.servicios.UsuarioServicio;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,6 +17,18 @@ public class UsuarioControlador {
 
     @Autowired
     private UsuarioServicio usuarioServicio;
+
+  
+    @GetMapping("/listar")
+    public String listarUsuario(ModelMap modelo) {
+        List<Usuario> usuarios = usuarioServicio.listar();
+
+
+        modelo.put("usuarios", usuarios);
+        
+        return ".html";
+    }
+    
 
     @GetMapping("/form")
     public String form() {
@@ -36,5 +50,6 @@ public class UsuarioControlador {
 
         return "artist-form.html";
     }
+
 
 }

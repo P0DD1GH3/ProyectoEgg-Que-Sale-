@@ -104,5 +104,5 @@ public class UsuarioServicio {
             throw new Exception("No coinciden las contraseñas");
         }
     }
-    
+
 }
