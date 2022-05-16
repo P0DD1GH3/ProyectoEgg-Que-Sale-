@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Artistas inscriptos</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
+
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
   <link rel="stylesheet" href="../static/css/style-artistList.css">
 
 </head>
@@ -24,13 +25,13 @@
 		  <div class="collapse navbar-collapse" id="mynavbar">
 			<ul class="navbar-nav me-auto">
 			  <li class="nav-item">
-				<a class="nav-link" href="javascript:void(0)">Principal</a>
+				<a class="nav-link" href="">Principal</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="javascript:void(0)">Cartelera</a>
+				<a class="nav-link" href="">Cartelera</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="javascript:void(0)">Registrate</a>
+				<a class="nav-link" href="">Registrate</a>
 			  </li>
 			</ul>
 			<div class="d-flex justify-content-end">
@@ -46,8 +47,87 @@
 	  </nav>
 </section>
 
-<!-- Modal -->
+<!-- KISS Modal -->
+<div class="modal top fade" id="ModalKISS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="false" data-mdb-keyboard="true">
 
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+  
+        <!-- Header -->
+        <div class="modal-header">
+          <h4 class="modal-title text-center">KISS</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Body -->
+        <div class="modal-body">
+            <div class="row m-5">
+                <div class="col-lg-4 mb-4">
+                    <div class="row">
+                        <h4>Título</h4>
+                    </div>
+                    <div class="row">
+                        <img class="modal-img" src="../static/images/banda1.jpg" alt="Imagen de KISS">
+                    </div>
+
+                </div>
+                <div class="col-lg-8 mb-8">
+                    Otro texto
+
+                </div>
+            </div>
+
+        </div>
+  
+        <!-- Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+<!-- Cattaneo Modal -->
+<div class="modal top fade" id="ModalCattaneo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="false" data-mdb-keyboard="true">
+
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title text-center">Hernán Cattaneo</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="row m-5">
+                <div class="col-lg-4 mb-4">
+                    <div class="row">
+                        <h4>Título</h4>
+                    </div>
+                    <div class="row">
+                        <img src="../static/images/banda2.jpg" alt="Imagen de Cattaneo">
+                    </div>
+
+                </div>
+                <div class="col-lg-8 mb-8">
+                    Otro texto
+
+                </div>
+            </div>
+
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
 
 <!-- Lista de artistas: Cards -->
 <section class="light">
@@ -55,7 +135,7 @@
 		<div class="h1 text-center text-dark" id="pageHeaderTitle">Nuestros artistas</div>
 
 		<article class="postcard light blue">
-			<a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#myModal" href="#miModal">
+			<a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#ModalKISS" href="#miModal">
 				<img class="postcard__img" src="../static/images/banda1.jpg" alt="Image Title" />
 			</a>
 
@@ -80,8 +160,8 @@
 		</article>
 
 		<article class="postcard light red">
-			<a class="postcard__img_link" href="#">
-				<img class="postcard__img" src="../static/images/banda2.jpg" alt="Image Title" />	
+			<a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#ModalCattaneo" href="#miModal">
+				<img class="postcard__img" src="../static/images/banda2.jpg" alt="Image Title" />
 			</a>
 			<div class="postcard__text t-dark">
 				<h1 class="postcard__title red"><a href="#">Hernán Cattaneo</a></h1>
@@ -171,7 +251,6 @@
 			</div>
 		</article>
 
-
 	</div>
 </section>
  
@@ -222,7 +301,6 @@
 	</div>
 	<!-- Copyright -->
   </footer>
-
 
 
 </body>

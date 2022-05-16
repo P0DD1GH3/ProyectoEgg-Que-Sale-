@@ -349,3 +349,8 @@ a, a:hover {
     background-image: linear-gradient(80deg, rgba(189, 73, 143, 0.1), transparent 50%);
   }
 }
+
+.modal-image{
+  width: 50%;
+  height: auto;
+}
