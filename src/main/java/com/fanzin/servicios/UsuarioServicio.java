@@ -4,15 +4,26 @@ import com.fanzin.entidades.Imagen;
 import com.fanzin.entidades.Usuario;
 import com.fanzin.enumeraciones.Rol;
 import com.fanzin.repositorios.UsuarioRepositorio;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
-public class UsuarioServicio {
+public class UsuarioServicio implements UserDetailsService {
 
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
@@ -28,7 +39,8 @@ public class UsuarioServicio {
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
         usuario.setMail(mail);
-        usuario.setContrasenia(contrasenia);
+        String contraseniaEncriptada = new BCryptPasswordEncoder().encode(contrasenia);
+        usuario.setContrasenia(contraseniaEncriptada);
         usuario.setRol(Rol.USUARIO);
         Imagen imagen = imagenServicio.guardar(archivo);
         usuario.setImagen(imagen);
@@ -103,6 +115,30 @@ public class UsuarioServicio {
         if (!contrasenia.equals(contrasenia1)) {
             throw new Exception("No coinciden las contraseñas");
         }
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
+        Usuario u = usuarioRepositorio.buscarPorEmail(mail);
+
+        if (u == null) {
+            return null;
+        }  
+
+        List<GrantedAuthority> permisos = new ArrayList<>();
+
+        GrantedAuthority p1 = new SimpleGrantedAuthority("ROLE_" + u.getRol().toString());
+        permisos.add(p1);
+        
+        ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+
+        HttpSession session = attr.getRequest().getSession(true);
+        session.setAttribute("usuariosession", u);
+
+        return new User(u.getMail(), u.getContrasenia(), permisos);
+        
+        
+        
     }
 
 }
