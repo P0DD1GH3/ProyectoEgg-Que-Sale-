@@ -1,10 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.fanzin;
 
+package com.fanzin;
 import com.fanzin.servicios.UsuarioServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -42,7 +37,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 						.usernameParameter("mail")
 						.passwordParameter("contrasenia")
 						.defaultSuccessUrl("/")
-						.failureUrl("/login?error=error")
+						.failureUrl("/usuario/login?error=error")
 						.permitAll()
 				.and().logout()
 					.logoutUrl("/logout")

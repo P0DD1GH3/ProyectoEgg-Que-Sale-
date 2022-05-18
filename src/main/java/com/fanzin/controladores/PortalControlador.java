@@ -10,7 +10,7 @@ public class PortalControlador {
 
     @GetMapping("/")
     public String index() {
-        return "indexDelfi.html";
+        return "index.html";
     }
     
     
