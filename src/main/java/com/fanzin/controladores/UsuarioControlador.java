@@ -22,10 +22,10 @@ public class UsuarioControlador {
     public String form() {
         return "artist-form.html";
     }
-    
+
     @GetMapping("/login")
-    public String login(){
-        return "Login.html";
+    public String login() {
+        return "login.html";
     }
 
     @PostMapping("/form")

@@ -123,22 +123,20 @@ public class UsuarioServicio implements UserDetailsService {
 
         if (u == null) {
             return null;
-        }  
+        }
 
         List<GrantedAuthority> permisos = new ArrayList<>();
 
         GrantedAuthority p1 = new SimpleGrantedAuthority("ROLE_" + u.getRol().toString());
         permisos.add(p1);
-        
+
         ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
 
         HttpSession session = attr.getRequest().getSession(true);
         session.setAttribute("usuariosession", u);
 
         return new User(u.getMail(), u.getContrasenia(), permisos);
-        
-        
-        
+
     }
 
 }
