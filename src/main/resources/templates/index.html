@@ -17,13 +17,21 @@
                 <div class="container mt-3">
                     <div class="btn-groups mx-auto" style="width:100%; text-align: center">
 
-                        <a type="button" class="btn btn-outline-primary" th:href="@{/usuario/form}">Registrarse</a>                     
-                        <a type="button" class="btn btn-outline-primary" th:href="@{/usuario/login}">Login</a>
+                        <a type="button" class="btn btn-outline-primary" th:href="@{/usuario/form}">Suscribirse</a>
                         <a type="button" class="btn btn-outline-primary">Sobre Nosotros</a>
-                        <a type="button" class="btn btn-outline-primary">Eventos</a>
-                        <a type="button" class="btn btn-outline-primary">Artistas</a>
-                        <a type="button" class="btn btn-outline-primary">Contacto</a>
+                        <button type="button" class="btn btn-outline-primary">Cartelera</button>
+                        <button type="button" class="btn btn-outline-primary">Artistas</button>
+                        <button type="button" class="btn btn-outline-primary">Contacto</button>
                     </div>
+                </div>
+                <div th:if="${session.usuariosession != null}">
+                    <h2 th:text="${session.usuariosession.mail}"></h2>
+                    <a type="button" class="btn btn-outline-primary" th:href="@{/usuario/login}"> Cerrar Sesion</a>
+                </div>
+                <div th:if="${session.usuariosession == null}">
+                    <h2>No estas logueado</h2>
+                    <a type="button" class="btn btn-outline-primary" th:href="@{/usuario/form}">Registrate</a>
+                     <a type="button" class="btn btn-outline-primary" th:href="@{/usuario/login}">Login</a>
                 </div>
             </div>
         </header>
@@ -32,6 +40,7 @@
                 <p>&copy;QUE SALE?</p>
             </div>
         </footer>
+      
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>}
     </body>

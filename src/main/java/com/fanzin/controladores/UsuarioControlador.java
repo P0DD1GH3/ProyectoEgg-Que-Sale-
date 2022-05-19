@@ -24,7 +24,13 @@ public class UsuarioControlador {
     }
 
     @GetMapping("/login")
-    public String login() {
+    public String login(ModelMap modelo, @RequestParam(required = false) String error, @RequestParam(required = false) String logout){
+        
+        if(error != null){
+            modelo.put("error", "Usuario o clave incorrectos");}
+        if(logout != null){
+            modelo.put("logout", "Has cerrado sesion exitosamente");}
+        
         return "login.html";
     }
 

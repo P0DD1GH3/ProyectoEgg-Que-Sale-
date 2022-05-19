@@ -1,5 +1,3 @@
-<!doctype html>
-<html lang="en">
 
     <!DOCTYPE html>
     <html lang="en">
@@ -21,7 +19,8 @@
             <div class="container">
 
                 <!--FORMULARIO-->
-                <form th:action="@{/logincheck}" method="POST">
+
+                <form th:action="@{/logincheck}" method="POST">           
                     <div class="row">
                         <h2 style="text-align:center;">Login with Social Media or Manually</h2>
                         <div class="vl">
@@ -45,8 +44,11 @@
                             <div class="hide-md-lg">
                                 <p>Or sign in manually:</p>
                             </div>
-
                             <!--INGRESO MANUAL... EMAIL Y PASS-->
+
+                            <p th:text="${error}" class="alert alert-danger" role="alert" id="alert"> </p>
+                            <p th:text="${logout}" class="alert alert-danger" role="alert" id="alert"> </p>
+                          
                             <input type="text" name="mail" placeholder="Username" required>
                             <input type="password" name="contrasenia" placeholder="Password" required>
                             <input type="submit" value="Login">
