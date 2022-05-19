@@ -12,7 +12,5 @@ public class PortalControlador {
     public String index() {
         return "index.html";
     }
-    
-    
 
 }

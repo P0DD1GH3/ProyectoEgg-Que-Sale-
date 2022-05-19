@@ -22,7 +22,7 @@ public class UsuarioControlador {
     public String form() {
         return "artist-form.html";
     }
-    
+
     @GetMapping("/login")
     public String login(ModelMap modelo, @RequestParam(required = false) String error, @RequestParam(required = false) String logout){
         
