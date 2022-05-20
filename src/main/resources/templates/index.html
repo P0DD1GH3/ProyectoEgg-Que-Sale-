@@ -26,7 +26,7 @@
                 </div>
                 <div th:if="${session.usuariosession != null}">
                     <h2 th:text="${session.usuariosession.mail}"></h2>
-                    <a type="button" class="btn btn-outline-primary" th:href="@{/usuario/login}"> Cerrar Sesion</a>
+                    <a type="button" class="btn btn-outline-primary" th:href="@{/logout}"> Cerrar Sesion</a>
                 </div>
                 <div th:if="${session.usuariosession == null}">
                     <h2>No estas logueado</h2>
