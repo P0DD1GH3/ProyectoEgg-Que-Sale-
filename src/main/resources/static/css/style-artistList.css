@@ -106,13 +106,13 @@ a, a:hover {
 }
 .postcard .postcard__tagbox .tag__item {
   display: inline-block;
-  background: rgba(83, 83, 83, 0.4);
   border-radius: 3px;
   padding: 2.5px 10px;
   margin: 0 5px 5px 0;
   cursor: default;
   user-select: none;
   transition: background-color 0.3s;
+  list-style-type: none;
 }
 .postcard .postcard__tagbox .tag__item:hover {
   background: rgba(83, 83, 83, 0.8);
