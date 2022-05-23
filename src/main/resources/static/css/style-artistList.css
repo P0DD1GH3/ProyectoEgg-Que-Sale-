@@ -394,6 +394,7 @@ a, a:hover {
   justify-content: flex-start;
   color: #dc3545;
   gap: 15px;
+  padding-left: 15px;
 }
 
 .row-perfil-cabecera {
@@ -411,5 +412,5 @@ a, a:hover {
   max-width: 80px;
   max-height: 80px;
   gap: 15px;
-  margin: 0 10px;
+  margin: 0 15px;
 }
