@@ -1,4 +1,5 @@
 package com.fanzin;
+
 import com.fanzin.servicios.UsuarioServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -26,22 +27,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .authorizeRequests()                
-				.antMatchers("/css/*", "/js/*", "/img/*", "/**","/main/**","/usuario/**","/actividad/**","/login/**", "/glosario/**").permitAll()
-				.and().formLogin()
-					.loginPage("/login")
-						.loginProcessingUrl("/logincheck")
-						.usernameParameter("mail")
-						.passwordParameter("contrasenia")
-						.defaultSuccessUrl("/")
-						.failureUrl("/usuario/login?error=error")
-						.permitAll()
-				.and().logout()
-					.logoutUrl("/logout")
-					.logoutSuccessUrl("/login?logout=logout")
-					.permitAll()
-				.and().csrf()
-					.disable();
-	}
-	
+                .authorizeRequests()
+                .antMatchers("/css/*", "/js/*", "/img/*", "/**", "/main/**", "/usuario/**", "/actividad/**", "/login/**", "/glosario/**").permitAll()
+                .and().formLogin()
+                .loginPage("/login")
+                .loginProcessingUrl("/logincheck")
+                .usernameParameter("mail")
+                .passwordParameter("contrasenia")
+                .defaultSuccessUrl("/")
+                .failureUrl("/usuario/login?error=error")
+                .permitAll()
+                .and().logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login?logout=logout")
+                .permitAll()
+                .and().csrf()
+                .disable();
+    }
+
 }
