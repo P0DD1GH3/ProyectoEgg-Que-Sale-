@@ -354,3 +354,62 @@ a, a:hover {
   width: 50%;
   height: auto;
 }
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  gap: 20px;
+}
+
+.contenedor-imagen {
+  border-radius: 20px;
+  max-width: max-content;
+}
+
+.imagen-profile-screen {
+  border-radius: 20px;
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+.contenedor-informacion {
+  color: #18151f;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contenedor-eventos {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: #bd150b;
+}
+
+.contenedor-redes-sociales {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: #dc3545;
+  gap: 15px;
+}
+
+.row-perfil-cabecera {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-eventos-miniatura {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagen-miniatura-evento {
+  border-radius: 10px;
+  max-width: 80px;
+  max-height: 80px;
+  gap: 15px;
+  margin: 0 10px;
+}
