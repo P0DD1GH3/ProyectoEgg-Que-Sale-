@@ -1,6 +1,7 @@
 package com.fanzin.controladores;
 
 import com.fanzin.entidades.Evento;
+import com.fanzin.enumeraciones.ActividadesEvento;
 import com.fanzin.servicios.EventoServicio;
 import java.util.Date;
 import java.util.List;
@@ -41,10 +42,10 @@ public class EventoControlador {
     }
 
     @PostMapping("/form")
-    public String crearEvento(ModelMap modelo, @RequestParam String idOrganizador, @RequestParam String contenido, @RequestParam String direccion, @RequestParam String valor, MultipartFile archivo, @RequestParam Date fecha) {
+    public String crearEvento(ModelMap modelo, @RequestParam String idOrganizador, @RequestParam String contenido, @RequestParam String direccion, @RequestParam String valor, MultipartFile archivo, @RequestParam Date fecha,@RequestParam String titulo, @RequestParam ActividadesEvento actividad) {
 
         try {
-            eventoServicio.crear(idOrganizador, contenido, direccion, valor, archivo, fecha);
+            eventoServicio.crear(idOrganizador, contenido, direccion, valor, archivo, fecha,titulo, actividad);
             modelo.put("exito", "Se guardó correctamente");
         } catch (Exception e) {
             modelo.put("error", e.getMessage());

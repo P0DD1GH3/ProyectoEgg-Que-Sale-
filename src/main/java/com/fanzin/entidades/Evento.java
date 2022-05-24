@@ -1,7 +1,10 @@
 package com.fanzin.entidades;
 
+import com.fanzin.enumeraciones.ActividadesEvento;
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -43,6 +46,9 @@ public class Evento {
     @NonNull
     @OneToOne
     private Imagen imagen;
+    
+    @Enumerated(EnumType.STRING)
+    private ActividadesEvento actividad;
 
     @NonNull
     @Temporal(TemporalType.DATE)
