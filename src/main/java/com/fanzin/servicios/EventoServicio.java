@@ -3,6 +3,7 @@ package com.fanzin.servicios;
 import com.fanzin.entidades.Evento;
 import com.fanzin.entidades.Imagen;
 import com.fanzin.entidades.Usuario;
+import com.fanzin.enumeraciones.ActividadesEvento;
 import com.fanzin.repositorios.EventoRepositorio;
 import java.util.Date;
 import java.util.List;
@@ -25,18 +26,27 @@ public class EventoServicio {
     private ImagenServicio imagenServicio;
 
     @Transactional(rollbackFor = Exception.class)
-    public void crear(String idOrganizador, String contenido, String direccion, String valor, MultipartFile archivo, Date fecha) throws Exception {
+    public void crear(String idOrganizador, String contenido, String direccion, String valor, MultipartFile archivo, Date fecha, String titulo, ActividadesEvento actividad) throws Exception {
 
+        validar(titulo,contenido,direccion);
+        
         Evento evento = new Evento();
         Usuario usuario = usuarioServicio.buscarPorId(idOrganizador);
         evento.setOrganizador(usuario);
+        evento.setTitulo(titulo);
         evento.setContenido(contenido);
         evento.setDireccion(direccion);
         evento.setValor(valor);
         Imagen imagen = imagenServicio.guardar(archivo);
         evento.setImagen(imagen);
         evento.setFecha(fecha);
-
+        
+        if(actividad.toString().isEmpty()){
+            evento.setActividad(ActividadesEvento.OTRO);
+        }else{
+           evento.setActividad(actividad); 
+        }
+        
         eventoRepositorio.save(evento);
 
     }
@@ -82,5 +92,24 @@ public class EventoServicio {
         return eventoRepositorio.findAll();
 
     }
+    
+    
+    private void validar(String titulo, String contenido,String direccion) throws Exception{
+        
+        if (titulo == null || titulo.isEmpty()) {
+            throw new Exception("Titulo vacío");
+        }
+        if (contenido == null || contenido.isEmpty()) {
+            throw new Exception("Contenido vacío");
+        }
+       
+        // falta validar fecha   [!]
+        
+        if (direccion == null || direccion.isEmpty()) {
+            throw new Exception("Direccion vacía");
+        }
+    }
+    
+    
 
 }
