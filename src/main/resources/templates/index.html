@@ -1,88 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- <<<<<<< HEAD
 <head>
-    <title>Que Sale?</title>
+    <title>[ Que Sale ? ]</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
+    
 </head>
+
+
+<style>
+    body {
+        background-image: url('/src/main/resources/static/images/collage.png');
+        background-size: 100%;
+    }
+</style>
+
 
 
 
 <body>
+    <!-- CODIGO DE REFERENCIA BACKEND
+        
+         <header>
 
-    <header>
-        <div class="container-fluid position-absolute top-50 start-50 translate-middle">
-            <div class="container-fluid">
-                <img src="../static/images/logo.jpg" alt="avatar logo" style="width:250px;"
-                    class="rounded-pill mx-auto d-block">
+        <div class="container-fluid d-flex justify-content-between p-3" style="background-color: blueviolet;">
+
+            <div th:if="${session.usuariosession != null}">
+                <h2 th:text="${session.usuariosession.mail}"></h2>
+                <a type="button" class="btn btn-dark" th:href="@{/logout}"> Cerrar Sesion</a>
             </div>
-            <div class="container mt-3 pt-5">
-                <div class="btn-groups mx-auto" style="width:100%; text-align: center">
+            <div th:if="${session.usuariosession == null}">
+                <h2>No estas logueado</h2>
+                <span>
+                    <a type="button" class="btn btn-dark text-end" th:href="@{/usuario/form}">Registrate</a>
+                    <a type="button" class="btn btn-dark" th:href="@{/usuario/login}">Login</a>
 
-                    <button type="button" class="btn btn-warning btn-lg">Suscribirse</button>
-                    <button type="button" class="btn btn-danger btn-lg">Eventos</button>
-                    <button type="button" class="btn btn-primary btn-lg">Artistas</button>
-                    <button type="button" class="btn btn-dark btn-lg">Sobre Nosotros</button>
-                    <button type="button" class="btn btn-dark btn-lg">Contacto</button>
+                </span>
+              
+            </div>
 
-                </div>
+        </div>
+    </header> -->
+
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <img src="../static/images/logo.jpg" alt="avatar logo" style="width:250px;"
+                class="rounded-pill mx-auto d-block mt-5">
+        </div>
+        <div class="container mt-3">
+            <div class="btn-groups mx-auto" style="width:100%; text-align: center">
+
+                <a type="button" class="btn btn-warning btn-lg" th:href="@{/usuario/form}">Suscribirse</a>
+                <a type="button" class="btn btn-dark btn-lg">Sobre Nosotros</a>
+                <button type="button" class="btn btn-danger btn-lg">Eventos</button>
+                <button type="button" class="btn btn-primary btn-lg">Artistas</button>
+                <button type="button" class="btn btn-dark btn-lg">Contacto</button>
             </div>
         </div>
-    </header>
+    </div>
 
+
+    <footer>
+        <div class="container-fluid"
+            style="position: fixed; bottom:0; left: 0; background-color: rgb(162, 162, 162); opacity: 70%;">
+            <p class="pt-2">&copy;[ QUE SALE ? ] 2022</p>
+        </div>
+    </footer>
 </body>
-======= -->
-    <head>
-        <title>Que Sale?</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    
-    <style>
-        body {
-         background-image: url('../images/collage.png');
-         background-size: 100%;
-    }
-    </style>
 
-    <body>
-        <header>
-            <div class="container-fluid">
-                <div class="container-fluid">
-                    <img src="../static/images/logo.jpg" alt="avatar logo"
-                         style="width:40px;" class="rounded-pill mx-auto d-block">
-                </div>
-                <div class="container mt-3">
-                    <div class="btn-groups mx-auto" style="width:100%; text-align: center">
-
-                        <a type="button" class="btn btn-outline-primary" th:href="@{/usuario/form}">Registrarse</a>
-                        <a type="button" class="btn btn-outline-primary" th:href="@{/evento/cartelera}">Eventos</a>
-                        <button type="button" class="btn btn-outline-primary">Artistas</button>
-
-                        
-                    </div>
-                </div>
-                <div th:if="${session.usuariosession != null}">
-                    <h2 th:text="${session.usuariosession.mail}"></h2>
-                    <a type="button" class="btn btn-outline-primary" th:href="@{/logout}"> Cerrar Sesion</a>
-                </div>
-                <div th:if="${session.usuariosession == null}">
-                    <h2>No estas logueado</h2>
-                    <a type="button" class="btn btn-outline-primary" th:href="@{/usuario/form}">Registrate</a>
-                    <a type="button" class="btn btn-outline-primary" th:href="@{/usuario/login}">Login</a>
-                </div>
-            </div>
-        </header>
-        <footer>
-            <div class="container">
-                <p>&copy;QUE SALE?</p>
-            </div>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>}
-    </body>
-
-
-</html>
+ 
