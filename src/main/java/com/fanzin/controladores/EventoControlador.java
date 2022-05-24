@@ -19,6 +19,17 @@ public class EventoControlador {
 
     @Autowired
     private EventoServicio eventoServicio;
+    
+    
+    @GetMapping("/cartelera")
+    public String cartelera() {
+        return "eventos.html";
+    }
+    
+    @GetMapping("/form")
+    public String form() {
+        return "crear_evento_form.html";
+    }
 
     @GetMapping("/listar")
     public String listarEvento(ModelMap modelo) {
@@ -29,8 +40,8 @@ public class EventoControlador {
         return ".html";
     }
 
-    @PostMapping("/")
-    public String registrarEvento(ModelMap modelo, @RequestParam String idOrganizador, @RequestParam String contenido, @RequestParam String direccion, @RequestParam String valor, MultipartFile archivo, @RequestParam Date fecha) {
+    @PostMapping("/form")
+    public String crearEvento(ModelMap modelo, @RequestParam String idOrganizador, @RequestParam String contenido, @RequestParam String direccion, @RequestParam String valor, MultipartFile archivo, @RequestParam Date fecha) {
 
         try {
             eventoServicio.crear(idOrganizador, contenido, direccion, valor, archivo, fecha);
@@ -51,4 +62,9 @@ public class EventoControlador {
 
     }
 
+    
+    
+    
+    
+    
 }

@@ -25,6 +25,9 @@ public class Evento {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
+    @NonNull
+    private String titulo;
+    
     @ManyToOne
     private Usuario organizador;
 
@@ -44,5 +47,7 @@ public class Evento {
     @NonNull
     @Temporal(TemporalType.DATE)
     private Date fecha;
+    
+    // [ falta enum tipoDeActivad]
 
 }
