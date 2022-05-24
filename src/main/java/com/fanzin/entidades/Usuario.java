@@ -2,6 +2,8 @@ package com.fanzin.entidades;
 
 import com.fanzin.enumeraciones.Rol;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -33,7 +35,8 @@ public class Usuario {
 
     @OneToOne
     private Imagen imagen;
-
+    
+    @Enumerated(EnumType.STRING)
     private Rol rol;
 
 }

@@ -23,6 +23,19 @@ public class UsuarioControlador {
         return "artist-form.html";
     }
 
+    @GetMapping("/login")
+    public String login(ModelMap modelo, @RequestParam(required = false) String error, @RequestParam(required = false) String logout) {
+
+        if (error != null) {
+            modelo.put("error", "Usuario o clave incorrectos");
+        }
+        if (logout != null) {
+            modelo.put("logout", "Has cerrado sesion exitosamente");
+        }
+
+        return "login.html";
+    }
+
     @PostMapping("/form")
     public String crear(ModelMap modelo, @RequestParam String nombre, @RequestParam String mail, @RequestParam String contrasenia, @RequestParam String contrasenia1) {
         try {

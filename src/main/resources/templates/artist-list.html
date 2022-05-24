@@ -1,307 +1,322 @@
 <!DOCTYPE html>
 <html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Artistas inscriptos</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Artistas inscriptos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
-  <link rel="stylesheet" href="../static/css/style-artistList.css">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
+        <link rel="stylesheet" href="../static/css/style-artistList.css">
 
-</head>
-<body>
+    </head>
+    <body>
 
-<!--Header con un navbar-->
-<section class="light">
-	<nav class="navbar navbar-expand-sm navbar-danger bg-danger">
-		<div class="container-fluid">
-			<!-- logo -->
-			<a class="navbar-brand" href="#">
-				<img src="../static/images/logo.jpg" alt="Logo" style="width:40px;" class="rounded-pill border-5">
-			</a>
-		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="mynavbar">
-			<ul class="navbar-nav me-auto">
-			  <li class="nav-item">
-				<a class="nav-link" href="">Principal</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="">Cartelera</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="">Registrate</a>
-			  </li>
-			</ul>
-			<div class="d-flex justify-content-end">
-				<form class="d-flex ">
-					<input class="form-control me-2" type="text" placeholder="Artista....">
-					<button class="btn btn-danger" type="button">Buscar</button>
-				  </form>
-
-			</div>
-
-		  </div>
-		</div>
-	  </nav>
-</section>
-
-<!-- KISS Modal -->
-<div class="modal top fade" id="ModalKISS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="false" data-mdb-keyboard="true">
-
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-  
-        <!-- Header -->
-        <div class="modal-header">
-          <h4 class="modal-title text-center">KISS</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-  
-        <!-- Body -->
-        <div class="modal-body">
-            <div class="row m-5">
-                <div class="col-lg-4 mb-4">
-                    <div class="row">
-                        <h4>Título</h4>
+        <!--Header con un navbar-->
+        <section class="light">
+            <nav class="navbar navbar-expand-sm navbar-danger bg-danger">
+                <div class="container-fluid">
+                    <!-- logo -->
+                    <a class="navbar-brand" href="#">
+                        <img src="../static/images/logo.jpg" alt="Logo" style="width:40px;" class="rounded-pill border-5">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mynavbar">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Principal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="eventos.html">Cartelera</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="row">
-                        <img class="modal-img" src="../static/images/banda1.jpg" alt="Imagen de KISS">
+                    <div class="d-flex justify-content-end">
+                            <div class="d-flex">
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                                      Usuario
+                                    </button>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="artist-profile.html">Mi Perfil</a>
+                                      <a class="dropdown-item" href="#">Mis Eventos</a>
+                                      <a class="dropdown-item" href="#">Favoritos</a>
+                                      <div class="dropdown-divider"></div>
+                                      <a class="dropdown-item btn-danger" href="#"><button class="btn btn-danger">Cerrar Sesión</button></a>
+                                    </div>
+                                  </div>
+                        </div>
                     </div>
-
                 </div>
-                <div class="col-lg-8 mb-8">
-                    Otro texto
+            </nav>
+        </section>
+
+        <!-- KISS Modal -->
+        <div class="modal top fade" id="ModalKISS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="false" data-mdb-keyboard="true">
+
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-center">KISS</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <div class="row m-5">
+                            <div class="col-lg-4 mb-4">
+                                <div class="row">
+                                    <h4>Título</h4>
+                                </div>
+                                <div class="row">
+                                    <img class="modal-img" src="../static/images/banda1.jpg" alt="Imagen de KISS">
+                                </div>
+
+                            </div>
+                            <div class="col-lg-8 mb-8">
+                                Otro texto
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
 
                 </div>
             </div>
-
         </div>
-  
+
+        <!-- Cattaneo Modal -->
+        <div class="modal top fade" id="ModalCattaneo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="false" data-mdb-keyboard="true">
+
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-center">Hernán Cattaneo</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="row m-5">
+                            <div class="col-lg-4 mb-4">
+                                <div class="row">
+                                    <h4>Título</h4>
+                                </div>
+                                <div class="row">
+                                    <img src="../static/images/banda2.jpg" alt="Imagen de Cattaneo">
+                                </div>
+
+                            </div>
+                            <div class="col-lg-8 mb-8">
+                                Otro texto
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista de artistas: Cards -->
+        <section class="light">
+            <div class="container py-2">
+                <div class="h1 text-center text-dark" id="pageHeaderTitle">Nuestros artistas</div>
+
+                <article class="postcard light blue">
+                    <a class="postcard__img_link" href="artist-profile.html">
+                        <img class="postcard__img" src="../static/images/banda1.jpg" alt="Image Title" />
+                    </a>
+
+
+                    <div class="postcard__text t-dark">
+                        <h1 class="postcard__title blue"><a href="#">KISS</a></h1>
+                        <div class="postcard__subtitle small">
+                            <h5>Música</h2>
+                        </div>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">Kiss (estilizado KISS) es una banda estadounidense de rock formada en Nueva York en enero de 1973 por el bajista Gene Simmons y el guitarrista Paul Stanley, a los que más tarde se unirían el batería Peter Criss y el guitarrista Ace Frehley.2​ Conocido por su maquillaje facial y su extravagante vestuario, el grupo se dio a conocer al público a mediados de los años 1970 gracias a sus actuaciones en directo, en las que incluían pirotecnia, llamaradas, cañones, baterías elevadoras, guitarras con humo y sangre falsa. Si se tienen en cuenta los álbumes en solitario de 1978, Kiss ha conseguido treinta discos de oro de la RIAA y es la banda estadounidense que ha recibido un mayor número de estas certificaciones.nota 1​4​ El conjunto ha vendido más de 80 millones de álbumes en todo el mundo y veinticinco millones solo en los Estados Unidos.5​ A pesar de no haber alcanzado nunca la primera posición del Billboard 200, ha situado veintiséis de sus trabajos entre los cuarenta primeros puestos.
+                        </div>
+                        <ul class="postcard__tagbox">
+                            <li class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!"><i class="fab fa-2x fa-facebook-square"></i></a>
+                            </li>
+                            <li class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i class="fab fa-2x fa-instagram-square"></i></a>
+                            </li>
+                            <li class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i class="fab fa-2x fa-twitter-square"></i></a>
+                            </li>
+                            <li class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i class="fab fa-2x fa-youtube-square"></i></a>
+                            </li>              
+                        </ul>
+                        
+                    </div>
+                </article>
+
+                <article class="postcard light red">
+                    <a class="postcard__img_link" data-bs-toggle="modal" data-bs-target="#ModalCattaneo" href="#miModal">
+                        <img class="postcard__img" src="../static/images/banda2.jpg" alt="Image Title" />
+                    </a>
+                    <div class="postcard__text t-dark">
+                        <h1 class="postcard__title red"><a href="#">Hernán Cattaneo</a></h1>
+                        <div class="postcard__subtitle small">
+                            <time datetime="2020-05-25 12:00:00">
+                                <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+                            </time>
+                        </div>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+                        <ul class="postcard__tagbox">
+                            <li class="tag__item play red"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!"><i class="fab fa-2x fa-facebook-square"></i></a>
+                            </li>
+                            <li class="tag__item play red"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i class="fab fa-2x fa-instagram-square"></i></a>
+                            </li>
+                            <li class="tag__item play red"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i class="fab fa-2x fa-twitter-square"></i></a>
+                            </li>
+                            <li class="tag__item play red"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i class="fab fa-2x fa-youtube-square"></i></a>
+                            </li>              
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="postcard light green">
+                    <a class="postcard__img_link" href="#">
+                        <img class="postcard__img" src="../static/images/banda3.jpg" alt="Image Title" />
+                    </a>
+                    <div class="postcard__text t-dark">
+                        <h1 class="postcard__title green"><a href="#">Queen</a></h1>
+                        <div class="postcard__subtitle small">
+                            <time datetime="2020-05-25 12:00:00">
+                                <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+                            </time>
+                        </div>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+                        <ul class="postcard__tagbox">
+                            <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+                            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+                            <li class="tag__item play green">
+                                <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="postcard light yellow">
+                    <a class="postcard__img_link" href="#">
+                        <img class="postcard__img" src="../static/images/banda4.jpg" alt="Image Title" />
+                    </a>
+                    <div class="postcard__text t-dark">
+                        <h1 class="postcard__title yellow"><a href="#"></a>Banda XXI</h1>
+                        <div class="postcard__subtitle small">
+                            <time datetime="2020-05-25 12:00:00">
+                                <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+                            </time>
+                        </div>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+                        <ul class="postcard__tagbox">
+                            <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+                            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+                            <li class="tag__item play yellow">
+                                <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="postcard light magenta">
+                    <a class="postcard__img_link" href="#">
+                        <img class="postcard__img" src="../static/images/banda7.jpg" alt="Image Title" />
+                    </a>
+                    <div class="postcard__text t-dark">
+                        <h1 class="postcard__title yellow"><a href="#"></a>EMINEM</h1>
+                        <div class="postcard__subtitle small">
+                            <time datetime="2020-05-25 12:00:00">
+                                <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+                            </time>
+                        </div>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+                        <ul class="postcard__tagbox">
+                            <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+                            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+                            <li class="tag__item play yellow">
+                                <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
         <!-- Footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        </div>
-  
-      </div>
-    </div>
-  </div>
+        <footer class="bg-danger text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-1 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-1">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-facebook-f"></i
+                        ></a>
 
-<!-- Cattaneo Modal -->
-<div class="modal top fade" id="ModalCattaneo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="false" data-mdb-keyboard="true">
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-twitter"></i
+                        ></a>
 
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-  
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title text-center">Hernán Cattaneo</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal-body">
-            <div class="row m-5">
-                <div class="col-lg-4 mb-4">
-                    <div class="row">
-                        <h4>Título</h4>
-                    </div>
-                    <div class="row">
-                        <img src="../static/images/banda2.jpg" alt="Imagen de Cattaneo">
-                    </div>
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-google"></i
+                        ></a>
 
-                </div>
-                <div class="col-lg-8 mb-8">
-                    Otro texto
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-instagram"></i
+                        ></a>
 
-                </div>
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-linkedin-in"></i
+                        ></a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+                </section>
+                <!-- Section: Social media -->
             </div>
+            <!-- Grid container -->
 
-        </div>
-  
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        </div>
-  
-      </div>
-    </div>
-  </div>
+            <!-- Copyright -->
+            <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-white" href="#">www.quesaleweb.com.ar</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
 
-<!-- Lista de artistas: Cards -->
-<section class="light">
-	<div class="container py-2">
-		<div class="h1 text-center text-dark" id="pageHeaderTitle">Nuestros artistas</div>
+        <!--Funcionalidad de BS4-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
 
-		<article class="postcard light blue">
-			<a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#ModalKISS" href="#miModal">
-				<img class="postcard__img" src="../static/images/banda1.jpg" alt="Image Title" />
-			</a>
-
-
-			<div class="postcard__text t-dark">
-				<h1 class="postcard__title blue"><a href="#">KISS</a></h1>
-				<div class="postcard__subtitle small">
-					<time datetime="2020-05-25 12:00:00">
-						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-					</time>
-				</div>
-				<div class="postcard__bar"></div>
-				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-				<ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
-					<li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-					<li class="tag__item play blue">
-						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
-					</li>
-				</ul>
-			</div>
-		</article>
-
-		<article class="postcard light red">
-			<a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#ModalCattaneo" href="#miModal">
-				<img class="postcard__img" src="../static/images/banda2.jpg" alt="Image Title" />
-			</a>
-			<div class="postcard__text t-dark">
-				<h1 class="postcard__title red"><a href="#">Hernán Cattaneo</a></h1>
-				<div class="postcard__subtitle small">
-					<time datetime="2020-05-25 12:00:00">
-						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-					</time>
-				</div>
-				<div class="postcard__bar"></div>
-				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-				<ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
-					<li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-					<li class="tag__item play red">
-						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
-					</li>
-				</ul>
-			</div>
-		</article>
-
-		<article class="postcard light green">
-			<a class="postcard__img_link" href="#">
-				<img class="postcard__img" src="../static/images/banda3.jpg" alt="Image Title" />
-			</a>
-			<div class="postcard__text t-dark">
-				<h1 class="postcard__title green"><a href="#">Queen</a></h1>
-				<div class="postcard__subtitle small">
-					<time datetime="2020-05-25 12:00:00">
-						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-					</time>
-				</div>
-				<div class="postcard__bar"></div>
-				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-				<ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
-					<li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-					<li class="tag__item play green">
-						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
-					</li>
-				</ul>
-			</div>
-		</article>
-
-		<article class="postcard light yellow">
-			<a class="postcard__img_link" href="#">
-				<img class="postcard__img" src="../static/images/banda4.jpg" alt="Image Title" />
-			</a>
-			<div class="postcard__text t-dark">
-				<h1 class="postcard__title yellow"><a href="#"></a>Banda XXI</h1>
-				<div class="postcard__subtitle small">
-					<time datetime="2020-05-25 12:00:00">
-						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-					</time>
-				</div>
-				<div class="postcard__bar"></div>
-				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-				<ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
-					<li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-					<li class="tag__item play yellow">
-						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
-					</li>
-				</ul>
-			</div>
-		</article>
-
-		<article class="postcard light magenta">
-			<a class="postcard__img_link" href="#">
-				<img class="postcard__img" src="../static/images/banda7.jpg" alt="Image Title" />
-			</a>
-			<div class="postcard__text t-dark">
-				<h1 class="postcard__title yellow"><a href="#"></a>EMINEM</h1>
-				<div class="postcard__subtitle small">
-					<time datetime="2020-05-25 12:00:00">
-						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-					</time>
-				</div>
-				<div class="postcard__bar"></div>
-				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-				<ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
-					<li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-					<li class="tag__item play yellow">
-						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
-					</li>
-				</ul>
-			</div>
-		</article>
-
-	</div>
-</section>
- 
-<!-- Footer -->
-<footer class="bg-danger text-center text-white">
-	<!-- Grid container -->
-	<div class="container p-1 pb-0">
-	  <!-- Section: Social media -->
-	  <section class="mb-1">
-		<!-- Facebook -->
-		<a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
-		  ><i class="fab fa-facebook-f"></i
-		></a>
-  
-		<!-- Twitter -->
-		<a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
-		  ><i class="fab fa-twitter"></i
-		></a>
-  
-		<!-- Google -->
-		<a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
-		  ><i class="fab fa-google"></i
-		></a>
-  
-		<!-- Instagram -->
-		<a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
-		  ><i class="fab fa-instagram"></i
-		></a>
-  
-		<!-- Linkedin -->
-		<a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
-		  ><i class="fab fa-linkedin-in"></i
-		></a>
-  
-		<!-- Github -->
-		<a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
-		  ><i class="fab fa-github"></i
-		></a>
-	  </section>
-	  <!-- Section: Social media -->
-	</div>
-	<!-- Grid container -->
-  
-	<!-- Copyright -->
-	<div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
-	  © 2022 Copyright:
-	  <a class="text-white" href="#">www.quesaleweb.com.ar</a>
-	</div>
-	<!-- Copyright -->
-  </footer>
-
-
-</body>
+    </body>
 </html>

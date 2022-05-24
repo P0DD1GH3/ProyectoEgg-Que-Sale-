@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>[Ke Sale?] - Editar perfil</title>
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
+
+    </head>
+    <body>
+
+        <!--Cabecera (Navbar de BS4)-->
+        <nav class="navbar navbar-expand-sm navbar-danger bg-danger">
+            <div class="container-fluid">
+                <!-- logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="../static/images/logo.jpg" alt="Logo" style="width:40px;" class="rounded-circle">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="btn btn-outline-secondary" role="button" href="index.html">Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Cartelera</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Artistas</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="d-flex">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Registro</a>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                              Usuario
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Mi Perfil</a>
+                              <a class="dropdown-item" href="#">Mis Eventos</a>
+                              <a class="dropdown-item" href="#">Favoritos</a>
+                              <!-- <a class="dropdown-item" href="#">Link 3</a> -->
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item btn-danger" href="#">Cerrar Sesión</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--Cuerpo del formulario-->
+        <div class="row mt-2">
+            <h3 style="margin-left: 40px; margin-bottom: -10px">Editar perfil</h3>
+        </div>
+        <div class="row d-flex justify-content-center mb-5">   
+            <div class="col-md-4 my-5">
+                <div class="container-fluid">
+                    <div class="list-group">
+                        <a href="artistEdit-common.html" class="list-group-item list-group-item-action">Descripción y redes</a>
+                        <a href="#" class="list-group-item list-group-item-action disabled">Imagen de perfil</a>
+                        <a href="artistedit-password.html" class="list-group-item list-group-item-action">Contraseña</a>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-8 my-5">
+                <div class="col-md-8">
+                    <div class="container-fluid">
+                        <form id="formulario-rtista">
+                            <!--Nombre de usuario-->
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Imágen de perfil</label>
+                                <input type="file" accept=".jpg,.png" class="form-control-file" id="exampleFormControlFile1" placeholder=".jpg .png">
+                            </div>
+     
+                            <button type="submit" class="btn btn-danger">Guardar</button>
+                          </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--Pie de página-->
+        <footer class="bg-danger text-center text-white fixed-bottom mt-5">
+            <!-- Grid container -->
+            <div class="container pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-1">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-facebook-f"></i
+                        ></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-twitter"></i
+                        ></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-google"></i
+                        ></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-instagram"></i
+                        ></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-linkedin-in"></i
+                        ></a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"
+                       ><i class="fab fa-github"></i
+                        ></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-0" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-white" href="#">www.quesaleweb.com.ar</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+          
+          
+        <!--Importaciones necesarias para BS4-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

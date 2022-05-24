@@ -1,33 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>Eventos</title>
-  <link rel="stylesheet" href="../static/css/eventos.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-    crossorigin="anonymous"></script>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
+  <link rel="icon" href="../static/images/logo.jpg">
+
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
+  <link rel="stylesheet" href="../static/css/style-artistList.css">
 
 </head>
 
 <body>
-  <!--Header con un navbar-->
+
+  <!--Header with navbar-->
   <section class="light">
     <nav class="navbar navbar-expand-sm navbar-danger bg-danger">
       <div class="container-fluid">
         <!-- logo -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../templates/index.html">
           <img src="../static/images/logo.jpg" alt="Logo" style="width:40px;" class="rounded-pill border-5">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -36,13 +28,13 @@
         <div class="collapse navbar-collapse" id="mynavbar">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Principal</a>
+              <a class="nav-link" href="">Principal</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Cartelera</a>
+              <a class="nav-link" href="">Cartelera</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Registrate</a>
+              <a class="nav-link" href="">Registrate</a>
             </li>
           </ul>
           <div class="d-flex justify-content-end">
@@ -58,259 +50,237 @@
     </nav>
   </section>
 
-  <!-- partial:index.partial.html -->
-  <div class="cards">
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image" src="https://comunidad.fan/web/uploads/news/3717/0-desktop.jpg?1629468197" alt="" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
+
+  <!-- Lista de artistas: Cards -->
+  <section class="light">
+    <div class="container py-2">
+      <div class="h1 text-center text-dark" id="pageHeaderTitle">TUS PRÓXIMOS EVENTOS</div>
+
+      <article class="postcard light blue">
+        <a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#" href="#">
+          <img class="postcard__img"
+            src="https://www.sitioandino.com.ar/files/image/0/607/4e00d9a2c362b_896_607!.jpg?s=a0a0d5c98b4854550c0d3d108f96addd&d=1575395246"
+            alt="Nave Cultural" />
         </a>
-        <h2>
-          La Konga
-          <small>Estadio Luján</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          El trío cuartetero del momento que te hace vibrar con sus exitos.
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">+ info</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image"
-          src="https://www.lavoz.com.ar/resizer/h8JRZTmjGlVtHMIetUreC8h5e-I=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/HSHL53STJ5D7DDQ56FVLUKBPFQ.jpg"
-          alt="" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
+
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">NOMBRE EVENTO</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2022-06-11 20:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Sabado, 11 de Junio
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi eaque
+            est, aut odit distinctio facere doloremque explicabo, voluptas, dolore aperiam quam beatae saepe quas
+            consequatur dolorem. Expedita fuga impedit tempora?
+            <ul>
+              <li>Artistas Invitados: Los Guaira y Abel Pintos</li>
+              <li> Lugar: Las Cubas 201, Mendoza</li>
+            </ul>
+          </div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-tag mr-2"></i>$2600</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>20 a 23 hs</li>
+            <li class="tag__item play blue">
+              <a href="../templates/artist-list.html"><i class="fas fa-play mr-2"></i>Conocé Artistas</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="postcard light blue">
+        <a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#" href="#">
+          <img class="postcard__img" src="https://mendozatoday.com.ar/wp-content/uploads/2021/10/Image-64.jpg"
+            alt="Arena Maipu" />
         </a>
-        <h2>
-          La Barra
-          <small>Orfeo Superdromo</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          Veni a disfrutar una noche de puro baile y emoción de la mano de los grandes del cuarteto.
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">+ info</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image"
-          src="https://viapais.com.ar/resizer/Up5snBm25JK1IE1FVuWrQuEyBU8=/982x551/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/HFTGCNLEGFRDSMZQMZRWGMTCMI.jpg"
-          alt="" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
+
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">NOMBRE EVENTO</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2022-06-12 15:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Domingo, 12 Junio
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt"> Breve reseña
+            <ul>
+              <li>Artistas Invitados: La Barra y Banda XXI</li>
+              <li> Lugar: Emilio Civit 791, M5515 Maipú, Mendoza</li>
+            </ul>
+          </div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-tag mr-2"></i>$3000</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>15 a 18 hs</li>
+            <li class="tag__item play blue">
+              <a href="../templates/artist-list.html"><i class="fas fa-play mr-2"></i>Conocé Artistas</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="postcard light blue">
+        <a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#" href="#">
+          <img class="postcard__img"
+            src="https://cdn.eldoce.tv/sites/default/files/styles/site_nota_slider_contenido/public/nota/2020/10/13/orfeo-superdomo-demolicion-cordoba-cuarentena.jpg?itok=SQHK84Aw"
+            alt="Orfeo Superdromo" />
         </a>
-        <h2>
-          Banda XXI
-          <small>Estadio Luna Park</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          Te invitamos a vivir una noche inolvidable de la mano del ritmo más vibrante de la musica.
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">+ info</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image"
-          src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/01/23095952/Soledad-Pastorutti-Mar-del-Plata-Verano-2019-1920-3.jpg"
-          alt="" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
+
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">NOMBRE EVENTO</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2022-06-13 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Lunes, 13 Junio
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt"> Breve reseña
+            <ul>
+              <li>Artista Invitado: Los Fundamentalistas del Aire Acondicionado</li>
+              <li> Lugar: Manuel Cardeñosa 3450 B, Córdoba</li>
+            </ul>
+          </div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-tag mr-2"></i>$2900</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>12 a 15 hs</li>
+            <li class="tag__item play blue">
+              <a href="../templates/artist-list.html"><i class="fas fa-play mr-2"></i>Conocé Artistas</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="postcard light blue">
+        <a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#" href="#">
+          <img class="postcard__img" src="https://indiehoy.com/wp-content/uploads/2013/07/GEBA.jpg"
+            alt="Estadio GEBA" />
         </a>
-        <h2>
-          Soledad Pastorutti
-          <small>Teatro Gran Rex</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're
-          not available etc.
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">+ info</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image"
-          src="https://www.eldiario.com.ar/wp-content/uploads/2019/01/Luciano-Pereyra-en-la-Fiesta-de-la-Playa-12.jpg"
-          alt="" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">NOMBRE EVENTO</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2022-06-14 21:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Martes, 14 Junio
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt"> Breve reseña
+            <ul>
+              <li>Artistas Invitados: Las Pelotas, Ivan Noble y Los Palmeras</li>
+              <li> Lugar: Av. Coronel Marcelino E. Freyre 3831, CABA</li>
+            </ul>
+          </div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-tag mr-2"></i>$3500</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>21 a 01 hs</li>
+            <li class="tag__item play blue">
+              <a href="../templates/artist-list.html"><i class="fas fa-play mr-2"></i>Conocé Artistas</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="postcard light blue">
+        <a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#" href="#">
+          <img class="postcard__img" src="https://upload.wikimedia.org/wikipedia/commons/9/99/El_Espacio_4.JPG"
+            alt="Espacio Cultural nuestros hijos" />
         </a>
-        <h2>
-          Luciano Pereyra
-          <small>Auditoria Rosello</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          Presentando su ultimo corte "Nostalgias"
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">+ info</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image"
-          src="https://www.diariodecuyo.com.ar/__export/1620513836424/sites/diariodecuyo/img/2021/05/08/abel.jpg"
-          alt="" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
+
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">NOMBRE EVENTO</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2022-06-16 20:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Jueves, 16 Junio
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt"> Breve reseña
+            <ul>
+              <li>Artistas Invitados: Miguel Plaza, Juan Calle y Pedro Montaner</li>
+              <li>Lugar: Santiago Calzadilla 1336-1500, Buenos Aires</li>
+            </ul>
+          </div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-tag mr-2"></i>Gratis</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>20 a 22 hs</li>
+            <li class="tag__item play blue">
+              <a href="../templates/artist-list.html"><i class="fas fa-play mr-2"></i>Conocé Artistas</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+
+      <article class="postcard light blue">
+        <a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#" href="#">
+          <img class="postcard__img"
+            src="https://images.pagina12.com.ar/styles/focal_content_1200x1050/public/media/articles/75459/san-20mart-c3-adn.jpg?itok=xO9wGxuN"
+            alt="Teatro San Martín" />
         </a>
-        <h2>
-          Abel Pintos
-          <small>Arena Maipu</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          La voz inigualable de este gran artista
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">+ info</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image"
-          src="https://wikirock.net/wp-content/uploads/2021/05/red-hot-chili-peppers-nuevo-disco-1000x534.jpg" alt="" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
+
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">NOMBRE EVENTO</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2022-06-21 14:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Martes, 21 Junio
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt"> Breve reseña
+            <ul>
+              <li>Artista Invitado: Carlos Casado</li>
+              <li> Lugar: Avda. Corrientes 1530, Ciudad de Buenos Aires</li>
+            </ul>
+          </div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-tag mr-2"></i>$800</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>14 a 16 hs</li>
+            <li class="tag__item play blue">
+              <a href="../templates/artist-list.html"><i class="fas fa-play mr-2"></i>Conocé Artistas</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="postcard light blue">
+        <a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#" href="#">
+          <img class="postcard__img" src="https://www.buenosaires.gob.ar/sites/gcaba/files/sin_logo_viejo.jpg"
+            alt="Espacio Cultural Centeya" />
         </a>
-        <h2>
-          Red Hot Chili Peppers
-          <small>Estadio River Plate</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're
-          not available etc.
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">+ info</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image" src="https://estacionk2.com/wp-content/uploads/2019/10/la-renga-1.jpg" alt="" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
-        </a>
-        <h2>
-          La Renga
-          <small>Estadio Juan Jose Minella</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          Presentacion de su último disco "Alejado de la red"
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">+ info</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <img class="card__image" src="https://www.elindependiente.com/wp-content/uploads/2017/09/Mick-jagger.jpg"
-          alt="" />
-      </div>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
-        </a>
-        <h2>
-          THE ROLLING STONES
-          <small>Pulperia de amigos</small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          Presentando su ultimo disco "Blue & Lonesome"
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">+ info</a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">NOMBRE EVENTO</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2022-06-26 11:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Domingo, 26 Junio
+            </time>
           </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt"> Breve reseña
+            <ul>
+              <li>Artista Invitado: Beto Villanueva</li>
+              <li> Lugar: Av. San Juan 3255, C1233 CABA</li>
+            </ul>
+          </div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-tag mr-2"></i>Gratis</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>11 a 13 hs</li>
+            <li class="tag__item play blue">
+              <a href="../templates/artist-list.html"><i class="fas fa-play mr-2"></i>Conocé Artistas</a>
+            </li>
+          </ul>
         </div>
-      </div>
-    </div>
+      </article>
 
-  </div>
-  <!-- partial -->
+  </section>
+
 
 
   <!-- Footer -->
@@ -355,11 +325,6 @@
     <!-- Copyright -->
   </footer>
 
-
-
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
-  <script src="../static/script/eventos.js"></script>
 
 </body>
 
