@@ -37,17 +37,17 @@
 
         <!-- FRAGMENT CABECERA(NAVBAR)       -->
         <div th:fragment="mi_header">
-            <nav class="navbar navbar-expand-md navbar-danger bg-danger">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
                 <div class="container-fluid">
                     <!-- Izquierda -->
                     <div class="collapse navbar-collapse" id="mynavbar">
                         <div class="d-flex justify-content-start">
                             <!-- logo -->
                             <a class="navbar-brand" href="index.html">
-                                <img src="../static/images/logo.jpg" alt="Logo" style="width:40px;" class="rounded-circle">
+                                <img src="../static/images/logo.jpg" alt="Logo" style="width:60px;" class="rounded-circle">
                             </a>
                             <!--Links a otras vistas/secciones-->
-                            <ul class="navbar-nav me-auto">
+                            <ul class="navbar-nav me-auto align-items-center">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.html">Principal</a>
                                 </li>
@@ -79,7 +79,7 @@
                             </ul>
                             <!--  SI ESTÁ LOGUEADO EN LA PÁGINA -->
                             <div class="d-flex ml-3">
-                                <div class="dropdown">
+                                <div class="btn-group dropleft">
                                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
                                     Usuario
                                     </button>
@@ -119,14 +119,14 @@
         
         <!-- FRAGMENT PIE DE PÁGINA-->
         <div th:fragment="mi_footer">
-            <footer class="bg-danger text-center text-white fixed-bottom mt-5">
+            <footer class="bg-dark text-center text-white fixed-bottom mt-5">
 
                 <div class="container pb-0">
                     <!-- Section: Social media -->
                     <h5>Seguinos en:</h5>
                     <section class="mb-1">
                         <!-- Facebook -->
-                        <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button">
+                        <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#" role="button">
                             <i class="fab fa-facebook-f"></i>
                         </a>
 
