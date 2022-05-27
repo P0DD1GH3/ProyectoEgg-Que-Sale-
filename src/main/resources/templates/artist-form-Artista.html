@@ -67,54 +67,47 @@
                 <h2>Datos personales</h2>
             </div>
             <div class="container-fluid">
-                <form id="formulario-rtista">
+                <form id="formulario-rtista" th:action="@{/usuario/form}" method="POST" enctype="multipart/form-data">
+                    
                     <!--Nombre de usuario-->
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="inputName" aria-describedby="exampleName" placeholder="Nombre de usuario" required>
+                                <input name="nombre" type="text" class="form-control" id="inputName" aria-describedby="exampleName" placeholder="Nombre de usuario" th:value="${nombre}">
                             </div>
                         </div>
                     </div>
                     <!--Dirección de correo electrónico y contraseña-->
                     <div class="form-group">
-                      <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Correo electrónico" required>
+                      <input name="mail" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Correo electrónico" th:value="${mail}">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" required>
+                      <input name="contrasenia" type="password" class="form-control" id="inputPassword" placeholder="Contraseña" th:value="${contrasenia}">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirmar contraseña" required>
+                        <input name="contrasenia1" type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirmar contraseña" th:value="${contrasenia1}">
                     </div>
                     <!--Datos extras sobre la banda/grupo/asociación/etc-->
                     <h2>Sobre tu arte:</h2>
                     <div class="form-group">
                         <select class="custom-select form-control" id="inputTipoArte">
-                          <option selected>¿Qué tipo de arte hacés?</option>
-                          <option value="1">Música</option>
-                          <option value="2">Audiovisual</option>
-                          <option value="3">Cine</option>
-                          <option value="4">Teatro</option>
-                          <option value="5">Danza</option>
-                          <option value="6">Pintura</option>
-                          <option value="7">Poesía</option>
-                          <option value="8">Nada, solo estoy mirando</option>
-                          <option value="8">Otro</option>
+                          <option th:each="actividad : ${T(com.fanzin.enumeraciones.ActividadesEvento).values()}" 
+                                        th:value="${actividad}" th:text="${actividad}"></option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="inputDescripción" rows="5" placeholder="Ingresá una descripción" required></textarea>
+                        <textarea class="form-control" id="inputDescripción" rows="5" placeholder="Ingresá una descripción" name="descripcion" th:value="${descripcion}"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Imágen de perfil</label>
-                        <input type="file" accept=".jpg,.png" class="form-control-file" id="exampleFormControlFile1" placeholder=".jpg .png">
+                        <input type="file" accept=".jpg,.png" class="form-control-file" id="exampleFormControlFile1" placeholder=".jpg .png" name="archivo" th:value="${archivo}">
                     </div>
                     <h2>¿Querés agregar tus redes sociales?</h2>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
                                 <label for="#inputYoutube">Youtube:</label>
-                                <input type="url" class="form-control" id="inputYoutube" aria-describedby="exampleYoutube" pattern="https://www.youtube.com.*" placeholder="http://">
+                                <input type="url" class="form-control" id="inputYoutube" aria-describedby="exampleYoutube" pattern="https://www.youtube.com.*" placeholder="http://" name="youtube" th:value="${youtube}">
                             </div>
                         </div>
                     </div>
@@ -122,7 +115,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="#inputInstagram">Instagram:</label>
-                                <input type="url" class="form-control" id="inputInstagram" aria-describedby="exampleInstagram" pattern="https://.*" placeholder="http://">
+                                <input type="url" class="form-control" id="inputInstagram" aria-describedby="exampleInstagram" pattern="https://.*" placeholder="http://" name="instagram" th:value="${instagram}">
                             </div>
                         </div>
                     </div>
@@ -130,7 +123,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="#inputFacebook">Facebook:</label>
-                                <input type="url" class="form-control" id="inputFacebook" aria-describedby="exampleFacebook" pattern="https://.*" placeholder="http://">
+                                <input type="url" class="form-control" id="inputFacebook" aria-describedby="exampleFacebook" pattern="https://.*" placeholder="http://"name="facebook" th:value="${facebook}">
                             </div>
                         </div>
                     </div>
@@ -138,9 +131,13 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="#inputTwitter">Twitter:</label>
-                                <input type="url" class="form-control" id="inputTwitter" aria-describedby="exampleTwitter" pattern="https://.*" placeholder="http://">
+                                <input type="url" class="form-control" id="inputTwitter" aria-describedby="exampleTwitter" pattern="https://.*" placeholder="http://" name="twitter" th:value="${twitter}">
                             </div>
                         </div>
+                    </div>
+                    <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success" role="alert" id="alert">
+                    </div>
+                    <div th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" id="alert">
                     </div>
                     <button type="submit" class="btn btn-danger">Registrarme</button>
                   </form>
