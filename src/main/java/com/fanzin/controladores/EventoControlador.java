@@ -22,10 +22,10 @@ public class EventoControlador {
     @Autowired
     private EventoServicio eventoServicio;
 
-    @GetMapping("/cartelera")
-    public String cartelera() {
-        return "eventos.html";
-    }
+//    @GetMapping("/cartelera")
+//    public String cartelera() {
+//        return "eventos.html";
+//    }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USUARIO')")
     @GetMapping("/form")
@@ -39,7 +39,7 @@ public class EventoControlador {
 
         modelo.put("eventos", eventos);
 
-        return ".html";
+        return "eventos.html";
     }
 
     @PostMapping("/form")

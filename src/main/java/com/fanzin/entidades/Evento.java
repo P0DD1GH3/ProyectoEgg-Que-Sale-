@@ -53,6 +53,4 @@ public class Evento {
     @NonNull
     @Temporal(TemporalType.DATE)
     private Date fecha;
-
-    // [ falta enum tipoDeActivad]
 }
