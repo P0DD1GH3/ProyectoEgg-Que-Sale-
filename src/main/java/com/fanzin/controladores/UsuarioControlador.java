@@ -20,7 +20,7 @@ public class UsuarioControlador {
 
     @GetMapping("/form")
     public String form() {
-        return "artist-form.html";
+        return "artist-form-Artista.html";
     }
 
     @GetMapping("/login")
