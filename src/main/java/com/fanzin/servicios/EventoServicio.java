@@ -28,8 +28,8 @@ public class EventoServicio {
     @Transactional(rollbackFor = Exception.class)
     public void crear(String idOrganizador, String contenido, String direccion, String valor, MultipartFile archivo, Date fecha, String titulo, ActividadesEvento actividad) throws Exception {
 
-        validar(titulo,contenido,direccion);
-        
+        validar(titulo, contenido, direccion);
+
         Evento evento = new Evento();
         Usuario usuario = usuarioServicio.buscarPorId(idOrganizador);
         evento.setOrganizador(usuario);
@@ -37,16 +37,16 @@ public class EventoServicio {
         evento.setContenido(contenido);
         evento.setDireccion(direccion);
         evento.setValor(valor);
+        evento.setActividad(actividad);
         Imagen imagen = imagenServicio.guardar(archivo);
         evento.setImagen(imagen);
         evento.setFecha(fecha);
-        
-        if(actividad.toString().isEmpty()){
-            evento.setActividad(ActividadesEvento.OTRO);
-        }else{
-           evento.setActividad(actividad); 
-        }
-        
+
+//        if(actividad.toString().isEmpty()){
+//            evento.setActividad(ActividadesEvento.OTRO);
+//        }else{
+//           evento.setActividad(actividad); 
+//        }
         eventoRepositorio.save(evento);
 
     }
@@ -92,24 +92,20 @@ public class EventoServicio {
         return eventoRepositorio.findAll();
 
     }
-    
-    
-    private void validar(String titulo, String contenido,String direccion) throws Exception{
-        
+
+    private void validar(String titulo, String contenido, String direccion) throws Exception {
+
         if (titulo == null || titulo.isEmpty()) {
             throw new Exception("Titulo vacío");
         }
         if (contenido == null || contenido.isEmpty()) {
             throw new Exception("Contenido vacío");
         }
-       
+
         // falta validar fecha   [!]
-        
         if (direccion == null || direccion.isEmpty()) {
             throw new Exception("Direccion vacía");
         }
     }
-    
-    
 
 }

@@ -30,7 +30,7 @@ public class Evento {
 
     @NonNull
     private String titulo;
-    
+
     @ManyToOne
     private Usuario organizador;
 
@@ -46,14 +46,13 @@ public class Evento {
     @NonNull
     @OneToOne
     private Imagen imagen;
-    
+
     @Enumerated(EnumType.STRING)
     private ActividadesEvento actividad;
 
     @NonNull
     @Temporal(TemporalType.DATE)
     private Date fecha;
-    
-    // [ falta enum tipoDeActivad]
 
+    // [ falta enum tipoDeActivad]
 }
