@@ -1,5 +1,5 @@
 package com.fanzin.enumeraciones;
 
 public enum ActividadesEvento {
-    MUSICA,AUDIOVISUAL,CINE,TEATRO,DANZA,PINTURA,POESIA,OTRO;
+    Musica,Audiovisual,Cine,Teatro,Danza,Pintura,Poesia,Otro;
 }
