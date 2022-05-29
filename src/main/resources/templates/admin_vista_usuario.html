@@ -68,6 +68,15 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav nav-pills nav-stacked">
+                <form action="submit">
+                    <div class="input-group m-2" style="width: auto;">
+                        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button type="submit" class="btn btn-secondary">Buscar</button>
+                        </div>
+                      </div>
+                </form>
+
                 <li>
                     <a href="#"><span class="fa-stack fa-lg pull-left"><i
                                 class="fa fa-server fa-stack-1x "></i></span>Lista Eventos</a>
@@ -101,19 +110,19 @@
                                     <th scope="row">1</th>
                                     <td>Mark</td>
                                     <td>Otto</td>
-                                    <td><a class="btn btn-danger" href="#">Dar de baja </a> </td>
+                                    <td class="td-eliminar"><a class="btn btn-danger" href="#">Dar de baja </a> </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
                                     <td>Jacob</td>
                                     <td>Thornton</td>
-                                    <td><a class="btn btn-danger" href="#">Dar de baja </a></td>
+                                    <td class="td-eliminar"><a class="btn btn-danger" href="#">Dar de baja </a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
                                     <td>Larry</td>
                                     <td>the Bird</td>
-                                    <td><a class="btn btn-danger" href="#">Dar de baja </a> </td>
+                                    <td class="td-eliminar"><a class="btn btn-danger" href="#">Dar de baja </a> </td>
                                 </tr>
                             </tbody>
                         </table>
