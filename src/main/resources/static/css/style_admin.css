@@ -177,4 +177,11 @@
         transition: all 0.5s ease;
         width: auto;
     }
+
+    .td-eliminar {
+        display: flex;
+        justify-content: center;
+    }
+
+
 }
