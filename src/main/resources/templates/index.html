@@ -36,6 +36,39 @@
                   
                 </div>
     
+
+</head>
+
+
+<style>
+    body {
+        background-image: url('../images/collage.png');
+        background-size: 100%;
+    }
+</style>
+
+
+
+
+<body>
+    <!-- CODIGO DE REFERENCIA BACKEND
+        
+         <header>
+
+        <div class="container-fluid d-flex justify-content-between p-3" style="background-color: blueviolet;">
+
+            <div th:if="${session.usuariosession != null}">
+                <h2 th:text="${session.usuariosession.mail}"></h2>
+                <a type="button" class="btn btn-dark" th:href="@{/logout}"> Cerrar Sesion</a>
+            </div>
+            <div th:if="${session.usuariosession == null}">
+                <h2>No estas logueado</h2>
+                <span>
+                    <a type="button" class="btn btn-dark text-end" th:href="@{/usuario/form}">Registrate</a>
+                    <a type="button" class="btn btn-dark" th:href="@{/usuario/login}">Login</a>
+
+                </span>
+
             </div>
         </header> -->
 
