@@ -38,5 +38,18 @@ public class Usuario {
     
     @Enumerated(EnumType.STRING)
     private Rol rol;
-
+    
+    //nuevos
+    @Enumerated(EnumType.STRING)
+    private String actividad;
+    @NonNull
+    private String descripcion;
+    @NonNull
+    private String facebook;
+    @NonNull
+    private String instagram;
+    @NonNull
+    private String twitter;
+    @NonNull
+    private String youtube;
 }

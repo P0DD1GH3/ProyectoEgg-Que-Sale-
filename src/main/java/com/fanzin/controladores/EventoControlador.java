@@ -39,7 +39,7 @@ public class EventoControlador {
 
         modelo.put("eventos", eventos);
 
-        return ".html";
+        return "eventos.html";
     }
 
     @PostMapping("/form")

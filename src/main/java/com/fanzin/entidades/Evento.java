@@ -54,5 +54,4 @@ public class Evento {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
 
- 
 }

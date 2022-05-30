@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>[ Que Sale ? ]</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <head>
+        <title>[ Que Sale ? ]</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    </head>
+  
+    <style>
+        body {
+            background-image: url('../images/collage.png');
+            background-size: 100%;
+        }
+    </style>
+
+    <body>
+        <!-- CODIGO DE REFERENCIA BACKEND
+            
+             <header>
     
+            <div class="container-fluid d-flex justify-content-between p-3" style="background-color: blueviolet;">
+    
+                <div th:if="${session.usuariosession != null}">
+                    <h2 th:text="${session.usuariosession.mail}"></h2>
+                    <a type="button" class="btn btn-dark" th:href="@{/logout}"> Cerrar Sesion</a>
+                </div>
+                <div th:if="${session.usuariosession == null}">
+                    <h2>No estas logueado</h2>
+                    <span>
+                        <a type="button" class="btn btn-dark text-end" th:href="@{/usuario/form}">Registrate</a>
+                        <a type="button" class="btn btn-dark" th:href="@{/usuario/login}">Login</a>
+    
+                    </span>
+                  
+                </div>
+    
+
 </head>
 
 
@@ -36,36 +68,29 @@
                     <a type="button" class="btn btn-dark" th:href="@{/usuario/login}">Login</a>
 
                 </span>
-              
+
             </div>
+        </header> -->
 
-        </div>
-    </header> -->
-
-    <div class="container-fluid">
         <div class="container-fluid">
             <img src="../images/logo.jpg" alt="avatar logo" style="width:250px;"
                 class="rounded-pill mx-auto d-block mt-5">
         </div>
         <div class="container mt-3">
             <div class="btn-groups mx-auto" style="width:100%; text-align: center">
-
-                <a type="button" class="btn btn-warning btn-lg" th:href="@{/usuario/form}">Suscribirse</a>
-                <a type="button" class="btn btn-dark btn-lg">Sobre Nosotros</a>
-                <button type="button" class="btn btn-danger btn-lg">Eventos</button>
-                <button type="button" class="btn btn-primary btn-lg">Artistas</button>
+                <a type="button" class="btn btn-success btn-lg" th:href="@{/usuario/form}">Registrarse</a>
+                <a type="button" class="btn btn-success btn-lg" th:href="@{/usuario/login}">Login</a>
+                <a type="button" class="btn btn-danger btn-lg" th:href="@{/evento/listar}">Eventos</a>
+                <button type="button" class="btn btn-dark btn-lg">Artistas</button>
                 <button type="button" class="btn btn-dark btn-lg">Contacto</button>
             </div>
         </div>
-    </div>
 
+        <footer>
+            <div class="container-fluid"
+                 style="position: fixed; bottom:0; left: 0; background-color: rgb(162, 162, 162); opacity: 70%;">
+                <p class="pt-2">&copy;[ QUE SALE ? ] 2022</p>
+            </div>
+        </footer>
+    </body>
 
-    <footer>
-        <div class="container-fluid"
-            style="position: fixed; bottom:0; left: 0; background-color: rgb(162, 162, 162); opacity: 70%;">
-            <p class="pt-2">&copy;[ QUE SALE ? ] 2022</p>
-        </div>
-    </footer>
-</body>
-
- 

@@ -67,12 +67,16 @@
                 <h2>Datos personales</h2>
             </div>
             <div class="container-fluid">
-                <form id="formulario-artista" th:action="@{/usuario/form}" method="POST" >
+
+                <form id="formulario-artista" th:action="@{/usuario/form}" method="POST" enctype="multipart/form-data">
+
                     <!--Nombre de usuario-->
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
+
                                 <input type="text" class="form-control" id="inputName" aria-describedby="exampleName" placeholder="Nombre de usuario" name="nombre" th:value="${nombre}">
+
                             </div>
                         </div>
                     </div>
@@ -95,18 +99,18 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="inputDescripción" rows="5" placeholder="Ingresá una descripción" required></textarea>
+                        <textarea class="form-control" id="inputDescripción" rows="5" placeholder="Ingresá una descripción" name="descripcion" th:value="${descripcion}"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Imágen de perfil</label>
-                        <input type="file" accept=".jpg,.png" class="form-control-file" id="exampleFormControlFile1" placeholder=".jpg .png">
+                        <input type="file" accept=".jpg,.png" class="form-control-file" id="exampleFormControlFile1" placeholder=".jpg .png" name="archivo" th:value="${archivo}">
                     </div>
                     <h2>¿Querés agregar tus redes sociales?</h2>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
                                 <label for="#inputYoutube">Youtube:</label>
-                                <input type="url" class="form-control" id="inputYoutube" aria-describedby="exampleYoutube" pattern="https://www.youtube.com.*" placeholder="http://">
+                                <input type="url" class="form-control" id="inputYoutube" aria-describedby="exampleYoutube" pattern="https://www.youtube.com.*" placeholder="http://" name="youtube" th:value="${youtube}">
                             </div>
                         </div>
                     </div>
@@ -114,7 +118,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="#inputInstagram">Instagram:</label>
-                                <input type="url" class="form-control" id="inputInstagram" aria-describedby="exampleInstagram" pattern="https://.*" placeholder="http://">
+                                <input type="url" class="form-control" id="inputInstagram" aria-describedby="exampleInstagram" pattern="https://.*" placeholder="http://" name="instagram" th:value="${instagram}">
                             </div>
                         </div>
                     </div>
@@ -122,7 +126,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="#inputFacebook">Facebook:</label>
-                                <input type="url" class="form-control" id="inputFacebook" aria-describedby="exampleFacebook" pattern="https://.*" placeholder="http://">
+                                <input type="url" class="form-control" id="inputFacebook" aria-describedby="exampleFacebook" pattern="https://.*" placeholder="http://"name="facebook" th:value="${facebook}">
                             </div>
                         </div>
                     </div>
@@ -130,9 +134,13 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="#inputTwitter">Twitter:</label>
-                                <input type="url" class="form-control" id="inputTwitter" aria-describedby="exampleTwitter" pattern="https://.*" placeholder="http://">
+                                <input type="url" class="form-control" id="inputTwitter" aria-describedby="exampleTwitter" pattern="https://.*" placeholder="http://" name="twitter" th:value="${twitter}">
                             </div>
                         </div>
+                    </div>
+                    <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success" role="alert" id="alert">
+                    </div>
+                    <div th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" id="alert">
                     </div>
                     <button type="submit" class="btn btn-danger">Registrarme</button>
                      <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success" role="alert" id="alert">
