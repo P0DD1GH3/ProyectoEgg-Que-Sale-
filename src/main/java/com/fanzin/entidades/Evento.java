@@ -51,8 +51,8 @@ public class Evento {
     private ActividadesEvento actividad;
 
     @NonNull
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
 
-    // [ falta enum tipoDeActivad]
+ 
 }

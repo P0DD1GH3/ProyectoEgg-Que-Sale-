@@ -20,7 +20,7 @@ public class UsuarioControlador {
 
     @GetMapping("/form")
     public String form() {
-        return "artist-form.html";
+        return "artist-form-Artista.html";
     }
 
     @GetMapping("/login")
@@ -46,10 +46,10 @@ public class UsuarioControlador {
             modelo.put("nombre", nombre);
             modelo.put("mail", mail);
 
-            return "artist-form.html";
+            return "artist-form-Artista.html";
         }
 
-        return "artist-form.html";
+        return "artist-form-Artista.html";
     }
 
     @GetMapping("/listar")
