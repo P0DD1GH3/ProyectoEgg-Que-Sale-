@@ -46,10 +46,10 @@ public class UsuarioControlador {
             modelo.put("nombre", nombre);
             modelo.put("mail", mail);
 
-            return "artist-form.html";
+            return "artist-form-Artista.html";
         }
 
-        return "artist-form.html";
+        return "index.html";
     }
 
     @GetMapping("/listar")

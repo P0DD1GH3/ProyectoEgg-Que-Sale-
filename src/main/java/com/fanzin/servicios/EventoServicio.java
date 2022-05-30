@@ -42,11 +42,11 @@ public class EventoServicio {
         evento.setImagen(imagen);
         evento.setFecha(fecha);
 
-//        if(actividad.toString().isEmpty()){
-//            evento.setActividad(ActividadesEvento.OTRO);
-//        }else{
-//           evento.setActividad(actividad); 
-//        }
+        if (actividad.toString().isEmpty()) {
+            evento.setActividad(ActividadesEvento.Otro);
+        } else {
+            evento.setActividad(actividad);
+        }
         eventoRepositorio.save(evento);
 
     }

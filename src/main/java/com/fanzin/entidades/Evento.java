@@ -43,7 +43,6 @@ public class Evento {
     @NonNull
     private String valor;
 
-    @NonNull
     @OneToOne
     private Imagen imagen;
 
