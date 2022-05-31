@@ -41,25 +41,24 @@ public class UsuarioServicio implements UserDetailsService {
         
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
-        usuario.setMail(mail);
-        String contraseniaEncriptada = new BCryptPasswordEncoder().encode(contrasenia);
+        usuario.setMail(mail); String contraseniaEncriptada = new BCryptPasswordEncoder().encode(contrasenia);
         usuario.setContrasenia(contraseniaEncriptada);
+       
         usuario.setRol(Rol.USUARIO);
-        
+        usuario.setActividad(actividad);
         usuario.setDescripcion(descripcion);
         usuario.setFacebook(facebook);
         usuario.setTwitter(twitter);
         usuario.setInstagram(instagram);
         usuario.setYoutube(youtube);
-        
         Imagen imagen = imagenServicio.guardar(archivo);
         usuario.setImagen(imagen);
-        if (actividad.toString().isEmpty()) {
-            usuario.setActividad(actividad.Otro.toString());
-        } else {
-            //dudoso toString (if)
-            usuario.setActividad(actividad.toString());
-        }
+//        if (actividad.toString().isEmpty()) {
+//            usuario.setActividad(actividad.Otro.toString());
+//        } else {
+//            //dudoso toString (if)
+//            usuario.setActividad(actividad.toString());
+//        }
 
         return usuarioRepositorio.save(usuario);
 

@@ -1,5 +1,6 @@
 package com.fanzin.entidades;
 
+import com.fanzin.enumeraciones.ActividadesEvento;
 import com.fanzin.enumeraciones.Rol;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -41,15 +42,16 @@ public class Usuario {
     
     //nuevos
     @Enumerated(EnumType.STRING)
-    private String actividad;
-    @NonNull
+    private ActividadesEvento actividad;
+    
+    
     private String descripcion;
-    @NonNull
+   
     private String facebook;
-    @NonNull
+   
     private String instagram;
-    @NonNull
+    
     private String twitter;
-    @NonNull
+ 
     private String youtube;
 }
