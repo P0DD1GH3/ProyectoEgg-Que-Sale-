@@ -28,6 +28,12 @@
         footer {
             background-color: #dc3545;
         }
+
+        .dropdown-menu {
+           margin-left: -60px;
+           width: 50px;
+        }
+        
         </style>
     </head>
 
@@ -37,7 +43,7 @@
 
         <!-- FRAGMENT CABECERA(NAVBAR)       -->
         <div th:fragment="mi_header">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <nav class="navbar navbar-expand navbar-dark bg-dark">
                 <div class="container-fluid">
                     <!-- Izquierda -->
                     <div class="collapse navbar-collapse" id="mynavbar">
@@ -70,7 +76,7 @@
                     <!-- Fin Izquierda -->
 
                     <!-- Derecha-->
-                    <div class="collapse navbar-collapse justify-content-end">
+                    <div class="collapse navbar-collapse justify-content-end" >
                         <div class="d-flex justify-content-end">
                             <ul class="navbar-nav me-auto">
                                 <li class="nav-item">
