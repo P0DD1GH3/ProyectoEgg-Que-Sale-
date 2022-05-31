@@ -43,6 +43,7 @@ public class UsuarioServicio implements UserDetailsService {
         usuario.setMail(mail);
         String contraseniaEncriptada = new BCryptPasswordEncoder().encode(contrasenia);
         usuario.setContrasenia(contraseniaEncriptada);
+
         usuario.setRol(Rol.USUARIO);
         usuario.setActividad(actividad);
         usuario.setDescripcion(descripcion);
@@ -50,7 +51,6 @@ public class UsuarioServicio implements UserDetailsService {
         usuario.setTwitter(twitter);
         usuario.setInstagram(instagram);
         usuario.setYoutube(youtube);
-
         Imagen imagen = imagenServicio.guardar(archivo);
         usuario.setImagen(imagen);
 //        if (actividad.toString().isEmpty()) {

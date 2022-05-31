@@ -39,7 +39,7 @@ public class EventoControlador {
 
         modelo.put("eventos", eventos);
 
-        return "eventos.html";
+        return ".html";
     }
 
     @PostMapping("/form")
@@ -49,7 +49,6 @@ public class EventoControlador {
         try {
             eventoServicio.crear(idOrganizador, contenido, direccion, valor, archivo, new Date(), titulo, actividad);
             modelo.put("exito", "Se guardó correctamente");
-            System.out.println(fecha + "**************");
         } catch (Exception e) {
             e.printStackTrace();
             modelo.put("error", e.getMessage());

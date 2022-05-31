@@ -28,6 +28,12 @@
         footer {
             background-color: #dc3545;
         }
+
+        .dropdown-menu {
+           margin-left: -60px;
+           width: 50px;
+        }
+        
         </style>
     </head>
 
@@ -37,7 +43,7 @@
 
         <!-- FRAGMENT CABECERA(NAVBAR)       -->
         <div th:fragment="mi_header">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <nav class="navbar navbar-expand navbar-dark bg-dark">
                 <div class="container-fluid">
                     <!-- Izquierda -->
                     <div class="collapse navbar-collapse" id="mynavbar">
@@ -70,7 +76,7 @@
                     <!-- Fin Izquierda -->
 
                     <!-- Derecha-->
-                    <div class="collapse navbar-collapse justify-content-end">
+                    <div class="collapse navbar-collapse justify-content-end" >
                         <div class="d-flex justify-content-end">
                             <ul class="navbar-nav me-auto">
                                 <li class="nav-item">
@@ -122,29 +128,21 @@
             <footer class="bg-dark text-center text-white fixed-bottom mt-5">
 
                 <div class="container pb-0">
-                    <!-- Section: Social media -->
                     <h5>Seguinos en:</h5>
                     <section class="mb-1">
-                        <!-- Facebook -->
                         <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#" role="button">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-
-                        <!-- Twitter -->
                         <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button">
                             <i class="fab fa-twitter"></i>
                         </a>
-
-                        <!-- Instagram -->
                         <a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </section>
-                    <!-- Section: Social media -->
                 </div>
 
             </footer>
-
         </div>
                    
 

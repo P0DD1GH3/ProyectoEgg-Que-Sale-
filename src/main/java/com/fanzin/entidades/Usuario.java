@@ -46,15 +46,11 @@ public class Usuario {
     @NonNull
     private String descripcion;
 
-    @NonNull
     private String facebook;
 
-    @NonNull
     private String instagram;
 
-    @NonNull
     private String twitter;
 
-    @NonNull
     private String youtube;
 }
