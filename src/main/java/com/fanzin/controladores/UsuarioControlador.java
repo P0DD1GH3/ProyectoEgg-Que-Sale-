@@ -42,9 +42,10 @@ public class UsuarioControlador {
     public String crear(ModelMap modelo, @RequestParam String nombre, @RequestParam String mail, @RequestParam String contrasenia, MultipartFile archivo, @RequestParam String contrasenia1,
             @RequestParam String descripcion, @RequestParam ActividadesEvento actividad, String facebook, String twitter, String youtube, String instagram) {
         try {
-            usuarioServicio.crear(nombre, mail, null, contrasenia1, archivo, actividad, descripcion, facebook, twitter, youtube, instagram);
+            usuarioServicio.crear(nombre, mail, contrasenia, contrasenia1, archivo, actividad, descripcion, facebook, twitter, youtube, instagram);
             modelo.put("exito", "Se cargó exitosamente");
         } catch (Exception e) {
+            e.printStackTrace();
             modelo.put("error", e.getMessage());
             modelo.put("nombre", nombre);
             modelo.put("mail", mail);
@@ -69,7 +70,7 @@ public class UsuarioControlador {
 
         modelo.put("usuarios", usuarios);
 
-        return ".html";
+        return "artist-list.html";
     }
 
 }

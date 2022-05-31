@@ -33,33 +33,32 @@ public class UsuarioServicio implements UserDetailsService {
     private ImagenServicio imagenServicio;
 
     @Transactional(rollbackFor = Exception.class)
-    public Usuario crear(String nombre, String mail, String contrasenia, String contrasenia1, MultipartFile archivo, 
-            ActividadesEvento actividad, String descripcion,String facebook,String twitter,String youtube,String instagram) throws Exception {
+    public Usuario crear(String nombre, String mail, String contrasenia, String contrasenia1, MultipartFile archivo,
+            ActividadesEvento actividad, String descripcion, String facebook, String twitter, String youtube, String instagram) throws Exception {
 
-        validar(nombre, mail, contrasenia, contrasenia1,descripcion);
-        
-        
+        validar(nombre, mail, contrasenia, contrasenia1, descripcion);
+
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
         usuario.setMail(mail);
         String contraseniaEncriptada = new BCryptPasswordEncoder().encode(contrasenia);
         usuario.setContrasenia(contraseniaEncriptada);
         usuario.setRol(Rol.USUARIO);
-        
+        usuario.setActividad(actividad);
         usuario.setDescripcion(descripcion);
         usuario.setFacebook(facebook);
         usuario.setTwitter(twitter);
         usuario.setInstagram(instagram);
         usuario.setYoutube(youtube);
-        
+
         Imagen imagen = imagenServicio.guardar(archivo);
         usuario.setImagen(imagen);
-        if (actividad.toString().isEmpty()) {
-            usuario.setActividad(actividad.Otro.toString());
-        } else {
-            //dudoso toString (if)
-            usuario.setActividad(actividad.toString());
-        }
+//        if (actividad.toString().isEmpty()) {
+//            usuario.setActividad(actividad.Otro.toString());
+//        } else {
+//            //dudoso toString (if)
+//            usuario.setActividad(actividad.toString());
+//        }
 
         return usuarioRepositorio.save(usuario);
 
@@ -79,9 +78,9 @@ public class UsuarioServicio implements UserDetailsService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public Usuario modificar(String id, String nombre, String mail, String contrasenia, String contrasenia1, MultipartFile archivo,String descripcion) throws Exception {
+    public Usuario modificar(String id, String nombre, String mail, String contrasenia, String contrasenia1, MultipartFile archivo, String descripcion) throws Exception {
 
-        validar(nombre, mail, contrasenia, contrasenia,descripcion);
+        validar(nombre, mail, contrasenia, contrasenia, descripcion);
 
         Usuario usuario = buscarPorId(id);
         usuario.setNombre(nombre);
@@ -110,7 +109,7 @@ public class UsuarioServicio implements UserDetailsService {
         return usuarioRepositorio.findAll();
     }
 
-    private void validar(String nombre, String mail, String contrasenia, String contrasenia1,String descripcion)throws Exception { 
+    private void validar(String nombre, String mail, String contrasenia, String contrasenia1, String descripcion) throws Exception {
 
         if (nombre == null || nombre.isEmpty()) {
             throw new Exception("Nombre vacío");
@@ -125,13 +124,13 @@ public class UsuarioServicio implements UserDetailsService {
         }
 
         if (contrasenia1 == null || contrasenia1.isEmpty()) {
-            throw new Exception("Contraseña vacío");
+            throw new Exception("Validar contraseña");
         }
 
         if (!contrasenia.equals(contrasenia1)) {
             throw new Exception("No coinciden las contraseñas");
         }
-        if(descripcion==null || descripcion.isEmpty()){
+        if (descripcion == null || descripcion.isEmpty()) {
             throw new Exception("Descripcion vacia");
         }
     }
