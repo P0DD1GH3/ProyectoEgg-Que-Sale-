@@ -1,4 +1,6 @@
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
 body {
     background-color: rgba(252, 198, 128, 0.33);
@@ -14,12 +16,18 @@ img:hover {
     background: rgba(0, 0, 0, 0.502);
 }
 
-.container {
+.container-1 {
 
     position: center;
     border-radius: 5px;
     background-color: #f2f1f1;
     padding: 20px 0 30px 0;
+}
+
+.container-1#container-loguin {
+    display: flex;
+    justify-content: center;
+
 }
 
 input,
@@ -123,15 +131,27 @@ input[type="submit"]:hover {
 than 650px wide, make the two columns stack on top 
 of each other instead of next to each other */
 
+section.mb-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
+    margin-left: 43.8%;
+
+
+}
+
 @media screen and (max-width: 650px) {
     .col {
         width: 100%;
         margin-top: 0;
     }
+
     /* hide the vertical line */
     .vl {
         display: none;
     }
+
     /* show the hidden text on small screens */
     .hide-md-lg {
         display: block;
