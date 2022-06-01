@@ -40,6 +40,7 @@ public class EventoServicio {
         evento.setValor(valor);
         evento.setActividad(actividad);
         Imagen imagen = imagenServicio.guardar(archivo);
+        evento.setImagen(null);
         evento.setImagen(imagen);
         evento.setFecha(fecha);
 

@@ -60,10 +60,14 @@
                 <article class="postcard light blue" th:each="evento : ${eventos}" method="GET">
                     <a class="postcard__img_link stretched-link" data-bs-toggle="modal" data-bs-target="#" href="#">
                         <img class="postcard__img"
-                             src="https://www.sitioandino.com.ar/files/image/0/607/4e00d9a2c362b_896_607!.jpg?s=a0a0d5c98b4854550c0d3d108f96addd&d=1575395246"
-                             alt="Nave Cultural" />
+                             th:if="${evento.imagen != null}"
+                             th:src="${'/imagen/evento?id=' + evento.id}"
+                             alt="IMAGEN EVENTO" />
+                        <img class="postcard__img"
+                             th:if="${evento.imagen == null}"
+                             src="../images/event_default1.jpg"
+                             alt="IMAGEN EVENTO" />
                     </a>
-
 
                     <div class="postcard__text t-dark">
                         <h1 class="postcard__title blue" th:text="${evento.titulo}"></h1>
