@@ -14,95 +14,9 @@
     </head>      
 
     <body>
-
-        <!-- <header> 
-            <nav>
-                <img src="../images/LOGO_QUE_SALE_ROJO-removebg-preview.png" alt=""/>
-            </nav>
-            <div style="margin-top: 5rem;"> </div>
-        </header> -->
-
-        <div th:insert="/fragments.html::mi_header"></div>
         
-        <div th:fragment="mi_header">
-            <nav class="navbar navbar-expand navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <!-- Izquierda -->
-                    <div class="collapse navbar-collapse" id="mynavbar">
-                        <div class="d-flex justify-content-start">
-                            <!-- logo -->
-                            <a class="navbar-brand" href="index.html">
-                                <img src="../static/images/logo.jpg" alt="Logo" style="width:60px;" class="rounded-circle">
-                            </a>
-                            <!--Links a otras vistas/secciones-->
-                            <ul class="navbar-nav me-auto align-items-center">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Principal</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="eventos.html">Cartelera</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="artist-list.html">Artistas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Nosotros</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contacto</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <!-- Fin Izquierda -->
-
-                    <!-- Derecha-->
-                    <div class="collapse navbar-collapse justify-content-end" >
-                        <div class="d-flex justify-content-end">
-                            <ul class="navbar-nav me-auto">
-                                <li class="nav-item">
-                                    <a class="btn btn-outline-light" href="index.html">ADMIN</a>
-                                </li>
-                            </ul>
-                            <!--  SI ESTÁ LOGUEADO EN LA PÁGINA -->
-                            <div class="d-flex ml-3">
-                                <div class="btn-group dropleft">
-                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-                                    Usuario
-                                    </button>
-                                    <div class="dropdown-menu">
-                                    <!-- Si conservamos artist-profile, este botón llevaría a esa vista -->
-                                    <a class="dropdown-item" href="artist-profile.html">Mi Perfil</a>
-                                    
-                                    <!--Si no conservamos artist-profile, este botón directamente lleva al formulario de edición de datos personales-->
-                                    <!-- <a class="dropdown-item" href="artistEdit-common.html">Editar Perfil</a> -->
-                                    
-                                    <a class="dropdown-item" href="#">Mis Eventos</a>
-                                    <a class="dropdown-item" href="#">Favoritos</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item btn-danger" href="#"><button class="btn btn-danger">Cerrar Sesión</button></a>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <!-- SI NO ESTÁ LOGUEADO EN LA PÁGINA   -->
-    
-                            <!-- <div class="flex-column justify-content-center">
-                                <div class="row justify-content-center">
-                                    <a class="btn btn-secondary" href="login.html" role="button">Ingresar</a>
-                                </div>
-                                <a href="artist-form-Artista.html">¿Sos nuevo? Registrate</a>
-                            </div> -->
-                            
-                        </div>
-
-                    </div>
-                    <!-- Fin Derecha -->             
-                </div>
-            </nav>
-        </div> 
-
+        <div th:replace="/fragments.html::mi_header"></div>
+        
         <div class="container">
 
             <!--FORMULARIO-->
@@ -161,7 +75,7 @@
 
         <footer th:replace="/fragments.html::mi_footer"></footer>
         
-        <div th:fragment="mi_footer">
+       <!-- <div th:fragment="mi_footer">
             <footer class="bg-dark text-center text-white fixed-bottom mt-5">
 
                 <div class="container pb-0">
@@ -180,7 +94,7 @@
                 </div>
 
             </footer>
-        </div>
+        </div> -->
 
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

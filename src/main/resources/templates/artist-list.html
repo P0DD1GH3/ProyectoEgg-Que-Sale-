@@ -52,7 +52,7 @@
                 </div>
             </nav>
         </section>
-
+        
         <!-- KISS Modal -->
         <div  class="modal top fade" id="ModalKISS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="false" data-mdb-keyboard="true">
 
@@ -116,16 +116,15 @@
                         <div class="postcard__preview-txt" th:text="${usuario.descripcion}">
                         </div>
                         <ul class="postcard__tagbox">
-                            <li  class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!"><i class="fab fa-2x fa-facebook-square"></i></a>
+                            <li  class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" th:href="${usuario.facebook}" target="_blank" role="button"><i class="fab fa-2x fa-facebook-square"></i></a>
                             </li>
-                            <li class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i class="fab fa-2x fa-instagram-square"></i></a>
+                            <li class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" th:href="${usuario.instagram}" target="_blank" role="button"><i class="fab fa-2x fa-instagram-square"></i></a>
                             </li>
-                            <li class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" href="#!" role="button"><i class="fab fa-2x fa-twitter-square"></i></a>
+                            <li class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1"th:href="${usuario.twitter}" target="_blank" role="button"><i class="fab fa-2x fa-twitter-square"></i></a>
                             </li>
-                            <li class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" th:href="${usuario.youtube}" role="button" ><i class="fab fa-2x fa-youtube-square"></i></a>
+                            <li class="tag__item play blue"><a class="btn btn-outline-light btn-floating rounded-circle m-1" th:href="${usuario.youtube}" target="_blank" role="button" ><i class="fab fa-2x fa-youtube-square"></i></a>
                             </li>              
                         </ul>
-                        
                     </div>
                 </article>
         </section>

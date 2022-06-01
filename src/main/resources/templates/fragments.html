@@ -55,13 +55,13 @@
                             <!--Links a otras vistas/secciones-->
                             <ul class="navbar-nav me-auto align-items-center">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Principal</a>
+                                    <a class="nav-link" th:href="@{/}">Principal</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="eventos.html">Cartelera</a>
+                                    <a class="nav-link" th:href="@{/evento/listar}">Cartelera</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="artist-list.html">Artistas</a>
+                                    <a class="nav-link" th:href="@{/usuario/listar}">Artistas</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Nosotros</a>
@@ -80,14 +80,14 @@
                         <div class="d-flex justify-content-end">
                             <ul class="navbar-nav me-auto">
                                 <li class="nav-item">
-                                    <a class="btn btn-outline-light" href="index.html">ADMIN</a>
+                                    <a class="btn btn-outline-light" href="index.html" th:if="${session.usuariosession != null}" th:text="${session.usuariosession.rol}"></a>
                                 </li>
                             </ul>
                             <!--  SI ESTÁ LOGUEADO EN LA PÁGINA -->
                             <div class="d-flex ml-3">
                                 <div class="btn-group dropleft">
-                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-                                    Usuario
+                                    <button th:if="${session.usuariosession != null}" th:text="${session.usuariosession.nombre}" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                                    
                                     </button>
                                     <div class="dropdown-menu">
                                     <!-- Si conservamos artist-profile, este botón llevaría a esa vista -->
@@ -97,6 +97,7 @@
                                     <!-- <a class="dropdown-item" href="artistEdit-common.html">Editar Perfil</a> -->
                                     
                                     <a class="dropdown-item" href="#">Mis Eventos</a>
+                                     <a class="dropdown-item" href="#">Crear Evento</a>
                                     <a class="dropdown-item" href="#">Favoritos</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item btn-danger" href="#"><button class="btn btn-danger">Cerrar Sesión</button></a>
