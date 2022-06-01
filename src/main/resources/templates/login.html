@@ -9,21 +9,15 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
-    <!-- <link href="../css/login_subs.css" rel="stylesheet" type="text/css"/> -->
-    <link href="../static/css/login_subs.css" rel="stylesheet" type="text/css" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'
+    <link href="../css/login_subs.css" rel="stylesheet" type="text/css" />
+
 
 
 </head>
 
 <body>
 
-    <!-- <header> 
-            <nav>
-                <img src="../images/LOGO_QUE_SALE_ROJO-removebg-preview.png" alt=""/>
-            </nav>
-            <div style="margin-top: 5rem;"> </div>
-        </header> -->
 
     <div th:insert="/fragments.html::mi_header"></div>
 
@@ -101,6 +95,13 @@
 
                     </div>
 
+    <body>
+        
+        <div th:replace="/fragments.html::mi_header"></div>
+        
+        <div class="container">
+
+
                 </div>
                 <!-- Fin Derecha -->
             </div>
@@ -111,7 +112,25 @@
 
     <div class="container-1" id="container-loguin">
 
+
         <!--FORMULARIO-->
+
+                    <!--BOTONES RED SOCIAL-->
+                    <div class="col-1">
+                        <a href="#" class="fb btn">
+                            <i class="fab fa-2x fa-facebook fa-fw"></i> Login with Facebook
+                        </a>
+                        <br>
+                        <a href="#" class="twitter btn">
+                            <i class="fab fa-2x fa-twitter fa-fw"></i> Login with Twitter
+                        </a>
+                        <br>    
+                        <a href="#" class="google btn">
+                            <i class="fab fa-2x fa-google fa-fw"></i> Login with Google+
+                        </a>
+                    </div>
+                    <div class="col">
+
 
         <form th:action="@{/logincheck}" method="POST">
             <div class="row">
@@ -161,10 +180,17 @@
 
 
 
+
     <footer th:replace="/fragments.html::mi_footer"></footer>
+       
+        
+       <!-- <div th:fragment="mi_footer">
+            <footer class="bg-dark text-center text-white fixed-bottom mt-5">
+
 
     <div th:fragment="mi_footer">
         <footer class="bg-dark text-center text-white fixed-bottom mt-5">
+
 
             <div class="container pb-0">
                 <h5>Seguinos en:</h5>
@@ -183,6 +209,10 @@
 
         </footer>
     </div>
+
+            </footer>
+        </div> -->
+
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
