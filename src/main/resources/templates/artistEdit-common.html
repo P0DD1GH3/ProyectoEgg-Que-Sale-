@@ -32,30 +32,23 @@
             <div class="col-md-8 my-5">
                 <div class="col-md-8">
                     <div class="container">
-                        <form id="formulario-artista-common">
+                        <form id="formulario-artista-common" th:action="@{/usuario/actualizar}" method="POST">
+                            <input type="hidden" name="id" th:value="${usuario.id}"/>
                             <div class="form-group">
-                                <select class="custom-select form-control" id="inputTipoArte">
-                                  <option selected>¿Qué tipo de arte hacés?</option>
-                                  <option value="1">Música</option>
-                                  <option value="2">Audiovisual</option>
-                                  <option value="3">Cine</option>
-                                  <option value="4">Teatro</option>
-                                  <option value="5">Danza</option>
-                                  <option value="6">Pintura</option>
-                                  <option value="7">Poesía</option>
-                                  <option value="8">Nada, solo estoy mirando</option>
-                                  <option value="8">Otro</option>
+                                <select class="custom-select form-control" id="inputTipoArte" name="actividad">
+                                 <option th:each="actividad : ${T(com.fanzin.enumeraciones.ActividadesEvento).values()}" 
+                                        th:value="${actividad}" th:text="${actividad}" ></option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id="inputDescripción" rows="5" placeholder="Ingresá una descripción" required></textarea>
+                                <textarea class="form-control" id="inputDescripción" rows="5" placeholder="Ingresá una descripción" name="descripcion" th:text="${usuario.descripcion}"></textarea>
                             </div>
                             <h2>Redes sociales</h2>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="#inputYoutube">Youtube:</label>
-                                        <input type="url" class="form-control" id="inputYoutube" aria-describedby="exampleYoutube" pattern="https://www.youtube.com.*" placeholder="http://">
+                                        <input type="url" class="form-control" id="inputYoutube" aria-describedby="exampleYoutube"  placeholder="http://" name="youtube" th:value="${usuario.youtube}">
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +56,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="#inputInstagram">Instagram:</label>
-                                        <input type="url" class="form-control" id="inputInstagram" aria-describedby="exampleInstagram" pattern="https://.*" placeholder="http://">
+                                        <input type="url" class="form-control" id="inputInstagram" aria-describedby="exampleInstagram"  placeholder="http://" name="instagram" th:value="${usuario.instagram}">
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +64,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="#inputFacebook">Facebook:</label>
-                                        <input type="url" class="form-control" id="inputFacebook" aria-describedby="exampleFacebook" pattern="https://.*" placeholder="http://">
+                                        <input type="url" class="form-control" id="inputFacebook" aria-describedby="exampleFacebook"  placeholder="http://" name="facebook" th:value="${usuario.facebook}">
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +72,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="#inputTwitter">Twitter:</label>
-                                        <input type="url" class="form-control" id="inputTwitter" aria-describedby="exampleTwitter" pattern="https://.*" placeholder="http://">
+                                        <input type="url" class="form-control" id="inputTwitter" aria-describedby="exampleTwitter" placeholder="http://" name="twitter" th:value="${usuario.twitter}">
                                     </div>
                                 </div>
                             </div>
