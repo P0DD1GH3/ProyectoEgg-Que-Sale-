@@ -13,8 +13,9 @@ public class ImagenServicio {
     @Autowired
     private ImagenRepositorio imagenRepositorio;
 
+    
     public Imagen guardar(MultipartFile archivo) throws Exception {
-        if (archivo != null) {
+        if (archivo != null && archivo.getBytes().length != 0) {
             try {
                 Imagen imagen = new Imagen();
                 imagen.setMime(archivo.getContentType());
@@ -30,7 +31,7 @@ public class ImagenServicio {
     }
 
     public Imagen modificar(String id, MultipartFile archivo) throws Exception {
-        if (archivo != null) {
+        if (archivo != null && archivo.getBytes().length != 0) {
             try {
                 Imagen imagen = new Imagen();
 
