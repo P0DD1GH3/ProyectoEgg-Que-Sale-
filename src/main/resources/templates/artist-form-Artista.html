@@ -101,7 +101,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Imágen de perfil</label>
-                            <input type="file" accept=".jpg,.png" class="form-control-file" id="exampleFormControlFile1" placeholder=".jpg .png" name="archivo" th:value="${archivo}">
+                            <input type="file" accept=".jpg,.png" class="form-control-file" id="exampleFormControlFile1" placeholder=".jpg .png" name="archivo" >
                         </div>
                         <h2>¿Querés agregar tus redes sociales?</h2>
                         <div class="row">
@@ -111,36 +111,35 @@
                                     <input type="url" class="form-control" id="inputYoutube" aria-describedby="exampleYoutube"  placeholder="http://" name="youtube" th:value="${youtube}">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="#inputInstagram">Instagram:</label>
-                                    <input type="url" class="form-control" id="inputInstagram" aria-describedby="exampleInstagram"  placeholder="http://" name="instagram" th:value="${instagram}">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="#inputInstagram">Instagram:</label>
+                                        <input type="url" class="form-control" id="inputInstagram" aria-describedby="exampleInstagram"  placeholder="http://" name="instagram" th:value="${instagram}">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="#inputFacebook">Facebook:</label>
-                                    <input type="url" class="form-control" id="inputFacebook" aria-describedby="exampleFacebook"  placeholder="http://"name="facebook" th:value="${facebook}">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="#inputFacebook">Facebook:</label>
+                                        <input type="url" class="form-control" id="inputFacebook" aria-describedby="exampleFacebook"  placeholder="http://"name="facebook" th:value="${facebook}">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="#inputTwitter">Twitter:</label>
-                                    <input type="url" class="form-control" id="inputTwitter" aria-describedby="exampleTwitter"  placeholder="http://" name="twitter" th:value="${twitter}">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="#inputTwitter">Twitter:</label>
+                                        <input type="url" class="form-control" id="inputTwitter" aria-describedby="exampleTwitter"  placeholder="http://" name="twitter" th:value="${twitter}">
+                                    </div>
                                 </div>
+                            </div> 
+                            <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success" role="alert" id="alert">
                             </div>
-                        </div> 
-                        <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success" role="alert" id="alert">
-                        </div>
-                        <div th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" id="alert">
-                        </div>
-                        <button type="submit" class="btn btn-danger">Registrarme</button>
+                            <div th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" id="alert">
+                            </div>
+                            <button type="submit" class="btn btn-danger">Registrarme</button>
 
                     </form>
                 </div>

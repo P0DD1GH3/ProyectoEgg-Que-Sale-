@@ -73,12 +73,12 @@ public class UsuarioServicio implements UserDetailsService {
             Usuario usuario = respuesta.get();
             return usuario;
         } else {
-            throw new Exception("No se encontro el evento indicado");
+            throw new Exception("[!] - No se encontro el Usuario indicado");
         }
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public Usuario modificar(String id, String nombre, String mail, String contrasenia, String contrasenia1, MultipartFile archivo, String descripcion) throws Exception {
+    public Usuario modificar(String id, String nombre, String mail, String contrasenia, String contrasenia1, MultipartFile archivo, String descripcion, String facebook, String twitter, String youtube, String instagram) throws Exception {
 
         validar(nombre, mail, contrasenia, contrasenia, descripcion);
 
@@ -92,6 +92,24 @@ public class UsuarioServicio implements UserDetailsService {
         }
         Imagen imagen = imagenServicio.modificar(idImagen, archivo);
         usuario.setImagen(imagen);
+        usuario.setFacebook(facebook);
+        usuario.setTwitter(twitter);
+        usuario.setYoutube(youtube);
+        usuario.setInstagram(instagram);
+
+        return usuarioRepositorio.save(usuario);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public Usuario modificarCommon(String id, ActividadesEvento actividad, String descripcion, String facebook, String twitter, String youtube, String instagram) throws Exception {
+
+        Usuario usuario = buscarPorId(id);
+        usuario.setDescripcion(descripcion);
+        usuario.setActividad(actividad);
+        usuario.setFacebook(facebook);
+        usuario.setTwitter(twitter);
+        usuario.setYoutube(youtube);
+        usuario.setInstagram(instagram);
 
         return usuarioRepositorio.save(usuario);
     }
