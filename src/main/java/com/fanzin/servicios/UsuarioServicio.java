@@ -73,7 +73,7 @@ public class UsuarioServicio implements UserDetailsService {
             Usuario usuario = respuesta.get();
             return usuario;
         } else {
-            throw new Exception("No se encontro el evento indicado");
+            throw new Exception("[!] - No se encontro el Usuario indicado");
         }
     }
 
