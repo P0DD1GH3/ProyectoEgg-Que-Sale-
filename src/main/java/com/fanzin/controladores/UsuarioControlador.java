@@ -6,6 +6,7 @@ import com.fanzin.servicios.UsuarioServicio;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -73,7 +74,7 @@ public class UsuarioControlador {
 
         return "artist-list.html";
     }
-
+    @PreAuthorize("hasAnyRole('ROLE_USUARIO')")
     @PostMapping("/actualizar")
     public String actualizarAutor(RedirectAttributes attr, @RequestParam String id, @RequestParam String descripcion, @RequestParam ActividadesEvento actividad, String facebook, String twitter, String youtube, String instagram) throws Exception {
         try {
@@ -84,7 +85,7 @@ public class UsuarioControlador {
             return "index.html";
         }
         attr.addFlashAttribute("descripcion", "El autor fue modificado correctamente");
-        return "artis-list.html";
+        return "artist-list.html";
 
     }
 

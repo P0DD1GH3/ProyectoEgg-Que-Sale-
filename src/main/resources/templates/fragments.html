@@ -91,16 +91,16 @@
                                     </button>
                                     <div class="dropdown-menu">
                                     <!-- Si conservamos artist-profile, este botón llevaría a esa vista -->
-                                    <a class="dropdown-item" href="artist-profile.html">Mi Perfil</a>
+                                    <a class="dropdown-item" th:href="@{/usuario/actualizar}">Mi Perfil</a>
                                     
                                     <!--Si no conservamos artist-profile, este botón directamente lleva al formulario de edición de datos personales-->
                                     <!-- <a class="dropdown-item" href="artistEdit-common.html">Editar Perfil</a> -->
                                     
                                     <a class="dropdown-item" href="#">Mis Eventos</a>
-                                     <a class="dropdown-item" href="#">Crear Evento</a>
+                                     <a class="dropdown-item" th:href="@{/evento/form}">Crear Evento</a>
                                     <a class="dropdown-item" href="#">Favoritos</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item btn-danger" href="#"><button class="btn btn-danger">Cerrar Sesión</button></a>
+                                    <div class="dropdown-divider" ></div>
+                                    <a class="dropdown-item btn-danger" th:href="@{/logout}">Cerrar Sesión</a>
                                     </div>
                                 </div>
                             </div>
