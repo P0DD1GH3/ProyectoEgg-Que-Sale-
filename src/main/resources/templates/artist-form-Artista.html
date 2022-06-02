@@ -10,11 +10,11 @@
 
     </head>
     <body>
-        
-        <!--Cabecera-->
+           <div th:insert="/fragments.html::mi_header"></div>
+<!--        Cabecera
         <nav class="navbar navbar-expand-sm navbar-danger bg-danger">
             <div class="container-fluid">
-                <!-- logo -->
+                 logo 
                 <a class="navbar-brand" href="#">
                     <img src="../static/images/logo.jpg" alt="Logo" style="width:40px;" class="rounded-circle">
                 </a>
@@ -50,7 +50,7 @@
                               <a class="dropdown-item" href="#">Mi Perfil</a>
                               <a class="dropdown-item" href="#">Mis Eventos</a>
                               <a class="dropdown-item" href="#">Favoritos</a>
-                              <!-- <a class="dropdown-item" href="#">Link 3</a> -->
+                               <a class="dropdown-item" href="#">Link 3</a> 
                               <div class="dropdown-divider"></div>
                               <a class="dropdown-item btn-danger" href="#">Cerrar Sesión</a>
                             </div>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav>-->
 
         <!--Cuerpo del formulario-->
         <div class="row d-flex justify-content-center mb-5">      
@@ -148,7 +148,7 @@
         </div>
        
         <!--Pie de página-->
-        <footer th:replace="/fragments.html::mi_footer"></footer>
+        <footer th:include="/fragments.html::mi_footer"></footer>
         
         <div th:fragment="mi_footer">
             <footer class="bg-dark text-center text-white fixed-bottom mt-5">

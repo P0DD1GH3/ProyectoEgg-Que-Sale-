@@ -85,7 +85,7 @@ public class UsuarioControlador {
             return "index.html";
         }
         attr.addFlashAttribute("descripcion", "El autor fue modificado correctamente");
-        return "artist-list.html";
+        return "redirect:/usuario/listar";
 
     }
 
