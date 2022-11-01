@@ -1,5 +1,5 @@
 # ProyectoEgg-Que-Sale-
-<h2>final project of Fullstack jr Dev. course.</h2>
+<h2>Final project of the Fullstack jr Dev. course at Eggcooperation.com</h2>
 
 A website intended to promote local artists, fairs or any cultural event.
 
